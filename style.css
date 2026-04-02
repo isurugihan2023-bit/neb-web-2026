@@ -1509,10 +1509,11 @@ footer > .container {
     overflow: hidden;
     cursor: pointer;
     border: none;
-    background: rgba(0, 0, 0, 0.25); /* High transparency */
+    background: rgba(0, 0, 0, 0.7); /* Opaque enough to block ambient red bleed */
     backdrop-filter: blur(15px); /* Strong glass effect */
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
     z-index: 10;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
 }
 
 .category-card img {
