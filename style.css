@@ -392,10 +392,31 @@ nav .container {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.5rem;
     font-weight: 900;
     color: var(--text-white);
     text-decoration: none;
+}
+
+.nav-logo-img {
+    height: 32px;
+    width: auto;
+    filter: drop-shadow(0 0 5px var(--primary-glow));
+    transition: var(--transition);
+    animation: logoFadeIn 1s ease-out forwards;
+}
+
+@keyframes logoFadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo:hover .nav-logo-img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px var(--primary-glow));
 }
 
 .logo span {
@@ -1955,4 +1976,33 @@ footer {
         margin: 0 auto !important;
         margin-top: 50px !important;
     }
+}
+
+/* Logo Specific Styles */
+.about-logo-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    background: rgba(255, 31, 31, 0.05);
+    border: 1px solid rgba(255, 31, 31, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-logo-img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 8px var(--primary-glow));
+    animation: logoFadeIn 1.2s ease-out forwards;
+}
+
+.footer-logo-img {
+    height: 28px;
+    width: auto;
+    filter: drop-shadow(0 0 5px var(--primary-glow));
+    animation: logoFadeIn 1.5s ease-out forwards;
 }
