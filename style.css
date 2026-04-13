@@ -416,19 +416,40 @@ nav .container {
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
     position: relative;
     padding-top: 80px;
     overflow: hidden;
+    /* Atmospheric Mask */
 }
 
-/* Removed heavy hero glitches and flares to maintain a clean esports aesthetic */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(15, 15, 15, 0.95) 0%,
+        rgba(15, 15, 15, 0.8) 30%,
+        transparent 80%
+    );
+    z-index: 1;
+}
 
 .hero .container {
     position: relative;
     z-index: 10;
-    pointer-events: none; /* Let clicks pass to canvas if needed, but buttons will override this */
+    display: flex;
+    justify-content: flex-start; /* Offset to the left */
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 600px; /* Constrained column */
+    text-align: left; /* Precision left-alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}    pointer-events: none; /* Let clicks pass to canvas if needed, but buttons will override this */
 }
 
 .hero-btns a {
@@ -457,48 +478,119 @@ nav .container {
 
 .hero-subtitle-top {
     font-size: 0.7rem;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     color: var(--text-gray);
     margin-bottom: 30px;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.hero-subtitle-top span {
-    color: var(--primary);
-    margin-right: 10px;
+.hero-subtitle-top::before,
+.hero-subtitle-top::after {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--primary);
 }
 
 .hero h1 {
-    font-size: 5rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    font-size: 5.5rem;
+    line-height: 1.0; /* Restored for better breathing room */
+    margin-bottom: 25px;
     font-weight: 900;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    user-select: none;
 }
 
 .hero h1 .top-line {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    position: relative;
+    animation: text-shimmer 4s infinite linear;
+    background: linear-gradient(
+        to right,
+        #fff 20%,
+        #ff1f1f 40%,
+        #ff1f1f 60%,
+        #fff 80%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* We will use pseudo-elements for the glitch layers */
 }
 
 .hero h1 .bron {
     color: var(--primary);
-    text-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(255, 31, 31, 0.2);
-    position: relative;
-}
-
-.hero h1 .bron::after {
-    content: '.';
-    color: var(--primary);
+    text-shadow: 0 0 20px var(--primary-glow);
+    animation: neon-surge 3s infinite ease-in-out;
+    letter-spacing: 2px;
 }
 
 .hero h1 .outline-text {
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-    font-size: 6rem;
-    margin-top: -15px;
+    font-size: 5.2rem;
+    margin-top: -5px; /* Balanced spacing: closer but not overlapping */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    animation: outline-breath 4s infinite ease-in-out;
+}
+
+/* Cyber-Glitch Layers */
+.hero h1 .top-line::before,
+.hero h1 .top-line::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0;
+}
+
+.hero h1 .top-line::before {
+    color: var(--primary);
+    z-index: -1;
+    animation: glitch-slice 5s infinite;
+}
+
+.hero h1 .top-line::after {
+    color: #fff;
+    z-index: -2;
+    animation: glitch-slice 5s infinite 2.5s;
+}
+
+@keyframes glitch-slice {
+    0% { clip-path: inset(80% 0 0 0); transform: translate(-5px); opacity: 0; }
+    2% { clip-path: inset(20% 0 50% 0); transform: translate(5px); opacity: 1; }
+    4% { clip-path: inset(40% 0 30% 0); transform: translate(-5px); opacity: 1; }
+    6% { clip-path: inset(80% 0 5% 0); transform: translate(2px); opacity: 1; }
+    8% { clip-path: inset(10% 0 85% 0); transform: translate(-2px); opacity: 1; }
+    10% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes neon-surge {
+    0%, 100% { text-shadow: 0 0 15px var(--primary-glow), 0 0 30px rgba(255, 31, 31, 0.2); filter: brightness(1); }
+    50% { text-shadow: 0 0 25px var(--primary-glow), 0 0 50px rgba(255, 31, 31, 0.4); filter: brightness(1.3); }
+}
+
+@keyframes text-shimmer {
+    to { background-position: 200% center; }
+}
+
+@keyframes outline-breath {
+    0%, 100% { opacity: 0.4; filter: blur(1px); }
+    50% { opacity: 0.8; filter: blur(0px); }
 }
 
 .hero .description {
@@ -573,14 +665,15 @@ nav .container {
     display: flex;
     gap: 30px;
     padding: 15px 35px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border-radius: 50px;
-    margin-top: 50px;
+    border-radius: 4px; /* Tactical square edges */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 60px;
     position: relative;
     z-index: 5;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .dock-flare {
