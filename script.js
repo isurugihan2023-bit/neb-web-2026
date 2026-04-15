@@ -4,11 +4,34 @@ const progressBar = document.getElementById('progress-bar');
 const percentText = document.querySelector('.percent');
 const body = document.body;
 
+function typeSyncText() {
+    const syncTypedTextElement = document.getElementById('sync-typed-text');
+    const syncString = "LOADING ASSETS";
+    if (syncTypedTextElement && !syncTypedTextElement.dataset.started) {
+        syncTypedTextElement.dataset.started = 'true';
+        let syncCharIndex = 0;
+        function typeChar() {
+            if (syncCharIndex < syncString.length) {
+                syncTypedTextElement.textContent += syncString.charAt(syncCharIndex);
+                syncCharIndex++;
+                setTimeout(typeChar, 80);
+            } else {
+                const dotsSpan = document.createElement('span');
+                dotsSpan.textContent = ''; // It will be animated by css
+                syncTypedTextElement.parentNode.appendChild(dotsSpan);
+            }
+        }
+        typeChar();
+    }
+}
+
 function initPreloader() {
     let progress = 0;
     const duration = 3500; // 3.5 seconds fixed duration
     const interval = 30; // Update every 30ms
     const step = 100 / (duration / interval);
+
+    typeSyncText();
 
     const loadingInterval = setInterval(() => {
         progress += step;
