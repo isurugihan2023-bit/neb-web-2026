@@ -25,7 +25,7 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     overflow-y: hidden; /* Prevent scroll during preloader */
-    cursor: none; /* Hide default cursor */
+    cursor: default;
     position: relative; /* Base for HUD system */
 }
 
@@ -39,7 +39,7 @@ body {
     z-index: -10;
     pointer-events: none;
     overflow: hidden;
-    background: #080508; /* Very dark purple-tinted base */
+    background: #080808; /* Pure dark base */
 }
 
 .hud-grid-overlay {
@@ -142,8 +142,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 700px 600px at 90% 85%, rgba(124, 58, 237, 0.18) 0%, transparent 65%),
-        radial-gradient(ellipse 500px 500px at 50% 50%, rgba(168, 85, 247, 0.06) 0%, transparent 70%);
+        radial-gradient(ellipse 700px 600px at 90% 85%, rgba(255, 31, 31, 0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 500px 500px at 50% 50%, rgba(255, 31, 31, 0.04) 0%, transparent 70%);
     animation: ambientShift 14s ease-in-out infinite alternate;
     z-index: 1;
     pointer-events: none;
@@ -154,8 +154,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 900px 500px at 85% 5%, rgba(124, 58, 237, 0.15) 0%, transparent 65%),
-        radial-gradient(ellipse 600px 900px at 5% 95%, rgba(168, 85, 247, 0.1) 0%, transparent 65%);
+        radial-gradient(ellipse 900px 500px at 85% 5%, rgba(255, 31, 31, 0.06) 0%, transparent 65%),
+        radial-gradient(ellipse 600px 900px at 5% 95%, rgba(255, 31, 31, 0.06) 0%, transparent 65%);
     animation: ambientShift2 18s ease-in-out infinite alternate;
     z-index: 1;
     pointer-events: none;
@@ -185,35 +185,35 @@ body {
 
 .glow-orb-1 {
     width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.05) 55%, transparent);
+    background: radial-gradient(circle, rgba(255, 31, 31, 0.12), rgba(255, 31, 31, 0.03) 55%, transparent);
     top: 0%; left: 0%;
     animation-duration: 12s;
     animation-delay: 0s;
 }
 .glow-orb-2 {
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.5), rgba(124, 58, 237, 0.1) 55%, transparent);
+    background: radial-gradient(circle, rgba(255, 31, 31, 0.08), rgba(255, 31, 31, 0.02) 55%, transparent);
     top: 20%; right: 0%;
     animation-duration: 15s;
     animation-delay: -4s;
 }
 .glow-orb-3 {
     width: 750px; height: 400px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0.05) 55%, transparent);
+    background: radial-gradient(circle, rgba(255, 31, 31, 0.07), rgba(255, 31, 31, 0.02) 55%, transparent);
     bottom: 15%; left: 20%;
     animation-duration: 10s;
     animation-delay: -7s;
 }
 .glow-orb-4 {
     width: 500px; height: 700px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.55), rgba(168, 85, 247, 0.1) 55%, transparent);
+    background: radial-gradient(circle, rgba(255, 31, 31, 0.1), rgba(255, 31, 31, 0.03) 55%, transparent);
     top: 50%; left: 0%;
     animation-duration: 18s;
     animation-delay: -2s;
 }
 .glow-orb-5 {
     width: 650px; height: 650px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.22), rgba(124, 58, 237, 0.05) 55%, transparent);
+    background: radial-gradient(circle, rgba(255, 31, 31, 0.07), rgba(255, 31, 31, 0.02) 55%, transparent);
     bottom: 0%; right: 5%;
     animation-duration: 14s;
     animation-delay: -10s;
@@ -239,60 +239,16 @@ body {
     100% { filter: hue-rotate(-20deg) brightness(1.1); }
 }
 
-/* Ultra-Simple Pro Cursor */
-.cursor-dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--primary);
-    position: fixed;
-    top: 50%; /* Default center */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 30001; /* Above the Armory Modal (20000) */
-    pointer-events: none;
-    box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary-glow);
-    transition: width 0.2s, height 0.2s, opacity 0.3s, background-color 0.3s;
-    animation: cursorPulse 2s infinite ease-in-out;
-}
-
-@keyframes cursorPulse {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary-glow); }
-    50% { transform: translate(-50%, -50%) scale(1.3); box-shadow: 0 0 15px var(--primary), 0 0 35px var(--primary-glow); }
-}
-
 .simple-glow {
     text-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* Cursor Hover states */
-a:hover ~ .cursor-dot,
-button:hover ~ .cursor-dot,
-.btn:hover ~ .cursor-dot,
-.category-card:hover ~ .cursor-dot {
-    width: 12px;
-    height: 12px;
-    background-color: #fff; /* White core on hover for contrast */
-    box-shadow: 0 0 20px #fff;
-}
-
-/* Ensure default cursor is hidden on interactive elements */
+/* Restore default cursor on all interactive elements */
 a, button, .btn, .nav-links a, .category-card, .modal-close, .btn-quickplay {
-    cursor: none !important;
+    cursor: pointer;
 }
 
-/* Click Spark Particles */
-.click-spark {
-    position: fixed;
-    width: 4px;
-    height: 4px;
-    background-color: var(--primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 30002; /* Above the cursor-dot */
-    box-shadow: 0 0 10px var(--primary);
-    will-change: transform, opacity;
-}
+
 
 h1, h2, h3, .logo {
     font-family: 'Orbitron', sans-serif;
@@ -543,9 +499,9 @@ nav .container {
 
 /* Glitched NB Logo Image */
 .nb-logo-container {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 5px;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2px;
     position: relative;
     display: flex;
     align-items: center;
@@ -615,7 +571,7 @@ nav .container {
     height: 4px;
     background: #111;
     border-radius: 2px;
-    margin: 5px 0;
+    margin: 0 0 5px 0;
     position: relative;
     overflow: hidden;
 }
@@ -830,11 +786,13 @@ nav .container {
 }
 
 .hero-subtitle-top {
-    font-size: 0.7rem;
-    letter-spacing: 4px;
+    font-size: 0.65rem;
+    letter-spacing: 6px;
     color: var(--text-gray);
-    margin-bottom: 30px;
-    opacity: 0.8;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
 }
 
 .hero-subtitle-top span {
@@ -844,12 +802,13 @@ nav .container {
 
 .hero h1 {
     font-size: 5rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 1;
+    margin-bottom: 50px;
     font-weight: 900;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 .hero h1 .top-line {
@@ -863,26 +822,15 @@ nav .container {
     position: relative;
 }
 
-.hero h1 .bron::after {
-    content: '.';
-    color: var(--primary);
-}
-
 .hero h1 .outline-text {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-    font-size: 6rem;
-    margin-top: -15px;
-}
-
-.hero .description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-gray);
-    max-width: 600px;
-    margin: 0 auto 35px; /* Reduced gap from 50px */
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+    font-size: 5rem;
+    letter-spacing: 8px;
     text-align: center;
 }
+
+
 
 .hero .secondary-title {
     font-size: 2.6rem;
@@ -948,26 +896,23 @@ nav .container {
 }
 
 .btn-blue {
-    background: #4f6cf5;
+    background: var(--primary);
     color: white;
-    box-shadow: 0 0 20px rgba(79, 108, 245, 0.3);
 }
 
 .btn-blue:hover {
-    background: #3d5be4;
+    background: #cc0000;
     transform: translateY(-3px);
-    box-shadow: 0 0 30px rgba(79, 108, 245, 0.5);
 }
 
 /* Discord PFP Button */
 .btn-pfp {
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    background: #5865F2;
     color: white;
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid rgba(168, 85, 247, 0.4);
+    border: 1px solid rgba(88, 101, 242, 0.6);
     position: relative;
     overflow: hidden;
 }
@@ -986,10 +931,9 @@ nav .container {
 }
 
 .btn-pfp:hover {
-    background: linear-gradient(135deg, #6d28d9, #9333ea);
+    background: #4752C4;
     transform: translateY(-3px);
-    box-shadow: 0 0 35px rgba(168, 85, 247, 0.6), 0 0 70px rgba(124, 58, 237, 0.2);
-    border-color: rgba(168, 85, 247, 0.8);
+    border-color: rgba(88, 101, 242, 0.9);
 }
 
 .btn-pfp i {
@@ -1172,25 +1116,25 @@ nav .container {
     display: inline-block;
 }
 
-/* Performance Themes - Redefining Primary colors for HUD cards */
+/* Performance Themes - All unified to red/white palette */
 .perf-high {
-    --primary: #ffd700; /* Gold */
-    --primary-glow: rgba(255, 215, 0, 0.4);
-    --accent-glow: #ffd700;
-    --accent-text: #ffd700;
+    --primary: #ff1f1f;
+    --primary-glow: rgba(255, 31, 31, 0.4);
+    --accent-glow: #ff1f1f;
+    --accent-text: #ffffff;
     --flow-speed: 1.5s;
 }
 
 .perf-mid {
-    --primary: #00ff88; /* Green */
-    --primary-glow: rgba(0, 255, 136, 0.4);
-    --accent-glow: #00ff88;
-    --accent-text: #00ff88;
+    --primary: #ff1f1f;
+    --primary-glow: rgba(255, 31, 31, 0.3);
+    --accent-glow: #ff1f1f;
+    --accent-text: #ffffff;
     --flow-speed: 3s;
 }
 
 .perf-low {
-    --primary: #ff1f1f; /* Crimson Red */
+    --primary: #ff1f1f;
     --primary-glow: rgba(255, 31, 31, 0.4);
     --accent-glow: #ff1f1f;
     --accent-text: #ff1f1f;
@@ -1227,7 +1171,7 @@ nav .container {
     overflow-y: hidden;
     font-family: 'Roboto Mono', monospace;
     font-size: 0.75rem;
-    color: #4CAF50; /* Terminal Green */
+    color: #ff1f1f; /* Terminal Red */
     background: #050505;
 }
 
@@ -1241,7 +1185,7 @@ nav .container {
 }
 
 .feed-item.kill { color: var(--primary); border-left-color: var(--primary); }
-.feed-item.objective { color: #2196F3; border-left-color: #2196F3; }
+.feed-item.objective { color: #ffffff; border-left-color: rgba(255, 255, 255, 0.4); }
 .feed-item.system { color: var(--text-gray); border-left-color: var(--text-gray); }
 
 @keyframes terminalIn {
@@ -1494,11 +1438,11 @@ nav .container {
 }
 
 .sbg-orb-red {
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.18), rgba(124, 58, 237, 0.04) 60%, transparent);
+    background: radial-gradient(circle, rgba(255, 31, 31, 0.2), rgba(255, 31, 31, 0.05) 60%, transparent);
 }
 
-.sbg-orb-purple {
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.3), rgba(168, 85, 247, 0.08) 60%, transparent);
+.sbg-orb-subtle {
+    background: radial-gradient(circle, rgba(255, 31, 31, 0.1), rgba(255, 31, 31, 0.03) 60%, transparent);
 }
 
 @keyframes sbgOrbFloat {

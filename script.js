@@ -98,13 +98,6 @@ const cursorDot = document.querySelector('.cursor-dot');
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.x;
     mouse.y = e.y;
-    
-    // Update Custom Cursor
-    if (cursorDot) {
-        cursorDot.style.left = `${e.x}px`;
-        cursorDot.style.top = `${e.y}px`;
-        cursorDot.style.opacity = '1';
-    }
 });
 
 function resizeCanvas() {
@@ -302,39 +295,6 @@ initHUDSystem();
 animateHUD();
 setTimeout(triggerSubtleGlitch, 8000);
 
-// Typing Effect for Hero Section
-const typedTextElement = document.getElementById('typed-text');
-const categories = ["Competitive", "Action", "Tutorials", "Funny Moments", "Valorant", "GTA V", "Among Us"];
-let categoryIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typeSpeed = 100;
-
-function type() {
-    const currentCategory = categories[categoryIndex];
-    
-    if (isDeleting) {
-        typedTextElement.textContent = currentCategory.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50;
-    } else {
-        typedTextElement.textContent = currentCategory.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 100;
-    }
-
-    if (!isDeleting && charIndex === currentCategory.length) {
-        isDeleting = true;
-        typeSpeed = 2000; // Pause at end
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        categoryIndex = (categoryIndex + 1) % categories.length;
-        typeSpeed = 500;
-    }
-
-    setTimeout(type, typeSpeed);
-}
-
 // Navbar background toggle
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -508,9 +468,9 @@ window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeArmory();
 });
 
-// Initialize Typing and Other Final Drivers
+// Initialize Final Drivers
 window.addEventListener('load', () => {
-    type();
+    // Other final initializations
 });
 
 // Dynamic Video Container (Placeholder for Future YT Integration)
