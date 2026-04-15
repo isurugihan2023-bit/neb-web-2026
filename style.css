@@ -1907,13 +1907,13 @@ footer {
 
 /* Logo Specific Styles */
 .about-logo-container {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 32px;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
     padding: 12px;
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1922,9 +1922,8 @@ footer {
 .about-logo-img {
     width: 100%;
     height: auto;
-    opacity: 0.9;
+    opacity: 0.85;
     filter: none;
-    animation: logoFadeIn 1.2s ease-out forwards;
 }
 
 .footer-logo-img {
