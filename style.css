@@ -1627,8 +1627,113 @@ footer > .container {
 }
 
 .about-content {
-    max-width: 680px;
+    max-width: 600px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 56px 48px;
+}
+
+/* About Header: logo + title side by side */
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 0;
+}
+
+.about-title-group {
+    text-align: left;
+}
+
+.about-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 4px !important;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+    letter-spacing: 5px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.about-tagline {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.55rem !important;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.25) !important;
+    margin: 0 !important;
+    text-transform: uppercase;
+}
+
+/* Divider line */
+.about-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 32px 0;
+}
+
+/* Description text */
+.about-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.9 !important;
+    color: rgba(160, 160, 160, 0.7) !important;
+    margin: 0 auto 36px !important;
+    max-width: 480px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+/* Stats row */
+.about-stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 40px;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.about-stat-num {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.about-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+}
+
+.about-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .about p {
@@ -2034,6 +2139,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    position: static;
+}
+
+/* Cancel any inherited pseudo-element underlines */
+.about-social a::after,
+.about-social a::before {
+    display: none !important;
+    content: none !important;
 }
 
 .about-social a:hover {
@@ -2046,8 +2160,8 @@ footer {
     justify-content: center;
 }
 
-/* Discord button - monochrome to match black UI theme */
-.btn-pfp {
+/* About section Discord button - monochrome only */
+.about-btns .btn-pfp {
     background: transparent;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -2059,28 +2173,14 @@ footer {
     transition: var(--transition);
 }
 
-.btn-pfp:hover {
+.about-btns .btn-pfp:hover {
     background: #ffffff;
     color: #000000;
     border-color: #ffffff;
     transform: translateY(-2px);
 }
 
-.about-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-    letter-spacing: 6px;
-    font-weight: 900;
-}
 
-/* Subtle divider under about heading */
-.about-content .dash {
-    width: 40px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 0 auto 32px;
-    border-radius: 2px;
-}
 
 .hamburger {
     display: none;
