@@ -48,8 +48,8 @@ body {
     width: 200%;
     height: 200%;
     background-image:
-        linear-gradient(rgba(255, 31, 31, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 31, 31, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 60px 60px;
     transform: perspective(1000px) rotateX(60deg) translateY(-10%);
     opacity: 0.5;
@@ -142,9 +142,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 800px 700px at 10% 15%, rgba(255, 31, 31, 0.22) 0%, transparent 65%),
-        radial-gradient(ellipse 700px 600px at 90% 85%, rgba(124, 58, 237, 0.22) 0%, transparent 65%),
-        radial-gradient(ellipse 500px 500px at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+        radial-gradient(ellipse 700px 600px at 90% 85%, rgba(124, 58, 237, 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 500px 500px at 50% 50%, rgba(168, 85, 247, 0.06) 0%, transparent 70%);
     animation: ambientShift 14s ease-in-out infinite alternate;
     z-index: 1;
     pointer-events: none;
@@ -155,9 +154,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 900px 500px at 85% 5%, rgba(124, 58, 237, 0.18) 0%, transparent 65%),
-        radial-gradient(ellipse 600px 900px at 5% 95%, rgba(255, 31, 31, 0.18) 0%, transparent 65%),
-        radial-gradient(ellipse 400px 400px at 60% 40%, rgba(255, 31, 31, 0.07) 0%, transparent 70%);
+        radial-gradient(ellipse 900px 500px at 85% 5%, rgba(124, 58, 237, 0.15) 0%, transparent 65%),
+        radial-gradient(ellipse 600px 900px at 5% 95%, rgba(168, 85, 247, 0.1) 0%, transparent 65%);
     animation: ambientShift2 18s ease-in-out infinite alternate;
     z-index: 1;
     pointer-events: none;
@@ -187,35 +185,35 @@ body {
 
 .glow-orb-1 {
     width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(255, 31, 31, 0.7), rgba(255, 31, 31, 0.15) 55%, transparent);
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.05) 55%, transparent);
     top: 0%; left: 0%;
     animation-duration: 12s;
     animation-delay: 0s;
 }
 .glow-orb-2 {
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.65), rgba(124, 58, 237, 0.15) 55%, transparent);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.5), rgba(124, 58, 237, 0.1) 55%, transparent);
     top: 20%; right: 0%;
     animation-duration: 15s;
     animation-delay: -4s;
 }
 .glow-orb-3 {
     width: 750px; height: 400px;
-    background: radial-gradient(circle, rgba(255, 31, 31, 0.5), rgba(255, 31, 31, 0.1) 55%, transparent);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0.05) 55%, transparent);
     bottom: 15%; left: 20%;
     animation-duration: 10s;
     animation-delay: -7s;
 }
 .glow-orb-4 {
     width: 500px; height: 700px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.6), rgba(168, 85, 247, 0.12) 55%, transparent);
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.55), rgba(168, 85, 247, 0.1) 55%, transparent);
     top: 50%; left: 0%;
     animation-duration: 18s;
     animation-delay: -2s;
 }
 .glow-orb-5 {
     width: 650px; height: 650px;
-    background: radial-gradient(circle, rgba(255, 31, 31, 0.5), rgba(255, 31, 31, 0.1) 55%, transparent);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.22), rgba(124, 58, 237, 0.05) 55%, transparent);
     bottom: 0%; right: 5%;
     animation-duration: 14s;
     animation-delay: -10s;
@@ -461,7 +459,7 @@ nav .container {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at center, #220000 0%, #000000 100%);
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
     z-index: 10000;
     display: flex;
     align-items: center;
@@ -479,8 +477,8 @@ nav .container {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(rgba(255, 31, 31, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 31, 31, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     background-position: center center;
     perspective: 500px;
@@ -504,7 +502,7 @@ nav .container {
     height: 100px;
     background: linear-gradient(to bottom, 
         transparent, 
-        rgba(255, 31, 31, 0.05) 50%, 
+        rgba(255, 255, 255, 0.03) 50%, 
         transparent
     );
     opacity: 0;
@@ -664,7 +662,7 @@ nav .container {
     left: 50%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(255, 31, 31, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     animation: pulseBG 3s infinite;
     pointer-events: none;
@@ -792,7 +790,7 @@ nav .container {
     position: absolute;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255, 31, 31, 0.08), transparent 70%);
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.05), transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 1;
@@ -1321,7 +1319,7 @@ nav .container {
 .video-card:hover {
     transform: translateY(-15px) scale(1.03);
     border-color: transparent;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 31, 31, 0.1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
     z-index: 100;
 }
 
@@ -1468,7 +1466,6 @@ nav .container {
     border-radius: 4px;
     z-index: 5;
     letter-spacing: 2px;
-    box-shadow: 0 0 15px rgba(255, 31, 31, 0.5);
     animation: livePulse 2s infinite;
 }
 
@@ -1497,7 +1494,7 @@ nav .container {
 }
 
 .sbg-orb-red {
-    background: radial-gradient(circle, rgba(255, 31, 31, 0.35), rgba(255, 31, 31, 0.08) 60%, transparent);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.18), rgba(124, 58, 237, 0.04) 60%, transparent);
 }
 
 .sbg-orb-purple {
@@ -1529,7 +1526,7 @@ nav .container {
     position: absolute;
     width: 40px;
     height: 40px;
-    border-color: rgba(255, 31, 31, 0.4);
+    border-color: rgba(255, 255, 255, 0.15);
     border-style: solid;
     pointer-events: none;
     animation: sbgCornerPulse 3s ease-in-out infinite;
@@ -1541,8 +1538,8 @@ nav .container {
 .sbg-corner-br { bottom: 20px; right: 20px; border-width: 0 2px 2px 0; }
 
 @keyframes sbgCornerPulse {
-    0%, 100% { border-color: rgba(255, 31, 31, 0.3); }
-    50%       { border-color: rgba(255, 31, 31, 0.8); }
+    0%, 100% { border-color: rgba(255, 255, 255, 0.1); }
+    50%       { border-color: rgba(255, 255, 255, 0.3); }
 }
 
 /* Ensure section content stacks above the FX layer for all sections */
@@ -1667,7 +1664,6 @@ footer > .container {
     display: flex;
     box-shadow:
         0 8px 60px rgba(0, 0, 0, 0.6),
-        0 0 40px rgba(255, 31, 31, 0.12),
         inset 0 1px 0 rgba(255, 255, 255, 0.08),
         inset 0 -1px 0 rgba(0, 0, 0, 0.4);
 }
@@ -1681,7 +1677,7 @@ footer > .container {
         160deg,
         rgba(255, 255, 255, 0.07) 0%,
         transparent 45%,
-        rgba(255, 31, 31, 0.04) 100%
+        transparent 100%
     );
     pointer-events: none;
     border-radius: 20px;
@@ -1744,7 +1740,7 @@ footer > .container {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-left: 1px solid rgba(255, 31, 31, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.03) 0%,
@@ -2179,8 +2175,8 @@ footer {
     height: 80px;
     margin: 0 auto 20px;
     padding: 10px;
-    background: rgba(255, 31, 31, 0.05);
-    border: 1px solid rgba(255, 31, 31, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -2336,8 +2332,8 @@ footer {
 /* ========================================================================= */
 .modal-info {
     background: 
-        linear-gradient(rgba(255, 31, 31, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 31, 31, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
         linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.15) 100%) !important;
     background-size: 20px 20px, 20px 20px, 100% 100% !important;
     position: relative;
@@ -2349,7 +2345,7 @@ footer {
     background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-bottom: 1px dashed rgba(255, 31, 31, 0.5);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
     padding-bottom: 20px;
     position: relative;
     display: inline-block;
@@ -2370,8 +2366,8 @@ footer {
 }
 
 .modal-info p {
-    border-left: 2px solid var(--primary);
-    background: rgba(255, 31, 31, 0.03);
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.02);
     padding: 15px;
 }
 
