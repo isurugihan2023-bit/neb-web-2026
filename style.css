@@ -952,7 +952,7 @@ nav .container {
     font-family: 'Oxanium', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
-    color: var(--accent-text, #ff1f1f);
+    color: var(--text-gray);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -1001,7 +1001,7 @@ nav .container {
 .growth-tag {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.7rem;
-    color: var(--accent-text, var(--primary));
+    color: var(--text-gray) !important;
     background: rgba(255, 255, 255, 0.03);
     padding: 4px 10px;
     border-radius: 20px;
@@ -1623,20 +1623,22 @@ footer > .container {
 .about {
     background: #000;
     text-align: center;
-    padding: 100px 0;
+    padding: 120px 0;
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 680px;
     margin: 0 auto;
 }
 
 .about p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-gray);
-    margin: 0 auto 40px;
-    max-width: 650px;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(160, 160, 160, 0.85);
+    margin: 0 auto 48px;
+    max-width: 560px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.3px;
 }
 
 /* Footer */
@@ -1800,23 +1802,23 @@ footer {
 
 /* Logo Specific Styles */
 .about-logo-container {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    padding: 10px;
-    background: rgba(255, 31, 31, 0.05);
-    border: 1px solid rgba(255, 31, 31, 0.1);
-    border-radius: 12px;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 32px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .about-logo-img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 8px var(--primary-glow));
+    opacity: 0.9;
+    filter: none;
     animation: logoFadeIn 1.2s ease-out forwards;
 }
 
@@ -1994,9 +1996,9 @@ footer {
 }
 
 .about-logo-container {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 30px;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2019,21 +2021,24 @@ footer {
 .about-social {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-bottom: 40px;
+    gap: 28px;
+    margin-bottom: 48px;
     background: none !important;
     border: none !important;
 }
 
 .about-social a {
-    color: var(--text-gray);
-    font-size: 1.4rem;
+    color: rgba(160, 160, 160, 0.6);
+    font-size: 1.3rem;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-social a:hover {
-    color: #fff;
-    transform: translateY(-2px);
+    color: #ffffff;
+    transform: translateY(-3px);
 }
 
 .about-btns {
@@ -2041,21 +2046,40 @@ footer {
     justify-content: center;
 }
 
+/* Discord button - monochrome to match black UI theme */
 .btn-pfp {
-    background: #5865F2;
+    background: transparent;
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     width: fit-content;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    padding: 14px 36px;
+    border-radius: 8px;
+    transition: var(--transition);
 }
 
 .btn-pfp:hover {
-    transform: translateY(-3px);
-    background: #4752C4;
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .about-content h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    letter-spacing: 4px;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    letter-spacing: 6px;
+    font-weight: 900;
+}
+
+/* Subtle divider under about heading */
+.about-content .dash {
+    width: 40px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 auto 32px;
+    border-radius: 2px;
 }
 
 .hamburger {
