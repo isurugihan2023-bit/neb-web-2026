@@ -1635,17 +1635,17 @@ footer > .container {
     padding: 56px 48px;
 }
 
-/* About Header: logo + title side by side */
+/* About Header: logo + title stacked */
 .about-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 24px;
+    gap: 20px;
     margin-bottom: 0;
 }
 
 .about-title-group {
-    text-align: left;
+    text-align: center;
 }
 
 .about-label {
@@ -2100,9 +2100,9 @@ footer {
 }
 
 .about-logo-container {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 32px;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2111,7 +2111,7 @@ footer {
 .about-logo-img {
     width: 100%;
     height: auto;
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 .footer-logo-img {
