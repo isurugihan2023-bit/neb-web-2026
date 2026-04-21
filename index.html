@@ -23,7 +23,7 @@
 </head>
 <body>
     <!-- Hyper-Horizon HUD System (Global Background) -->
-    <div class="hud-background-system">
+    <div class="hud-background-system" id="plasma-mount">
         <div class="hud-grid-overlay"></div>
         <div class="hud-shards-layer">
             <div class="cyber-shard s1"></div>
@@ -87,8 +87,8 @@
         <div class="section-bg-fx" id="hero-bg-fx">
             <div class="sbg-scanline"></div>
         </div>
-        <div class="mouse-flare"></div>
         <canvas id="hero-particles"></canvas>
+        <img src="assets/Untitled-1.png" alt="N3WB Character" class="hero-character-img">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content reveal">
@@ -99,9 +99,9 @@
                 </h1>
 
                 <div class="hero-btns">
-                    <a href="#videos" class="btn btn-primary btn-large">WATCH VIDEOS</a>
-                    <a href="#latest-live" class="btn btn-outline btn-large">WATCH LIVE</a>
-                    <a href="https://discord.gg/7cEa4KfX" target="_blank" class="btn btn-pfp btn-large">JOIN DISCORD</a>
+                    <a href="#videos" class="btn btn-primary btn-large"><i class="fas fa-play"></i> WATCH VIDEOS</a>
+                    <a href="#latest-live" class="btn btn-outline btn-large"><i class="fas fa-broadcast-tower"></i> WATCH LIVE</a>
+                    <a href="https://discord.gg/7cEa4KfX" target="_blank" class="btn btn-pfp btn-large"><i class="fab fa-discord"></i> JOIN DISCORD</a>
                 </div>
 
                 <div class="social-dock reveal">
@@ -575,12 +575,13 @@
                 <div class="modal-info">
                     <h2 id="modal-title">MISSION DATA</h2>
                     <p id="modal-desc">Synchronizing with target mission archive. Please wait...</p>
-                    <a href="#" id="modal-link" class="btn-quickplay" target="_blank">QUICK WATCH</a>
+                    <a href="#" id="modal-link" class="btn-quickplay" target="_blank"><i class="fas fa-play"></i> QUICK WATCH</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="plasma.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

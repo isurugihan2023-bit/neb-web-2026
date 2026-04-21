@@ -599,3 +599,20 @@ if (hamburger && navLinks) {
 }
 
 console.log("NEW BRON. Twin Horizon Engine Finalized 🚀");
+
+// ─── Plasma WebGL2 Background ─────────────────────────────────────────────
+(function () {
+    // Skip on small mobile — save battery & GPU heat
+    if (window.innerWidth <= 768) return;
+
+    console.log("[Plasma] Initializing WebGL background...");
+    window.Plasma.init({
+        container:        '#plasma-mount',
+        color:            '#ff1f1f',
+        speed:            0.6,
+        direction:        'forward',
+        scale:            1.1,
+        opacity:          0.5,
+        mouseInteractive: true
+    });
+})();
