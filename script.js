@@ -215,8 +215,12 @@ function initHUDSystem() {
     particles = [];
     orbs = [];
     sparks = [];
-    for (let i = 0; i < 35; i++) particles.push(new Particle());
-    for (let i = 0; i < 2; i++) orbs.push(new GlowOrb());
+    // Reduce particles on mobile for better performance
+    const isMobile = window.innerWidth <= 768;
+    const particleCount = isMobile ? 15 : 35;
+    const orbCount = isMobile ? 1 : 2;
+    for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+    for (let i = 0; i < orbCount; i++) orbs.push(new GlowOrb());
 }
 
 function updateHUDParallax() {
