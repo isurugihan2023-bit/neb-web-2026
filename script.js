@@ -229,11 +229,11 @@ function updateHUDParallax() {
     const moveY = (mouse.y / window.innerHeight - 0.5) * 2;
 
     if (hudGrid) {
-        hudGrid.style.transform = `perspective(1000px) rotateX(60deg) translateY(${-20 + scrollDelta * 0.06}%) translateX(${moveX * -10}px)`;
+        hudGrid.style.transform = `perspective(1000px) rotateX(60deg) translateY(${-20 + scrollDelta * 0.06}%) translateX(${moveX * -10}px) translateZ(0)`;
     }
 
     if (hudShards) {
-        hudShards.style.transform = `translateY(${scrollDelta * -0.12}px) translateX(${moveX * 15}px)`;
+        hudShards.style.transform = `translateY(${scrollDelta * -0.12}px) translateX(${moveX * 15}px) translateZ(0)`;
     }
 
     if (heroSection) {
@@ -266,7 +266,14 @@ function animateHUD() {
 
 // Global Click Spark Listener
 window.addEventListener('mousedown', (e) => {
-    for (let i = 0; i < 12; i++) {
+    const isMobile = window.innerWidth <= 768;
+    const maxSparksTotal = isMobile ? 20 : 60;
+    
+    // Hard cap total sparks to prevent mobile CPU overload
+    if (sparks.length > maxSparksTotal) return;
+
+    const spawnCount = isMobile ? 4 : 12;
+    for (let i = 0; i < spawnCount; i++) {
         sparks.push(new Spark(e.clientX, e.clientY));
     }
 });
@@ -399,35 +406,35 @@ const vanguardData = {
     'valorant': {
         title: 'VALORANT TACTICAL PRECISION',
         desc: 'Mastering the art of... trying. Join NEW BRON on the ultimate Silver 2 ranked grind in VALORANT. Experience questionable crosshair placement, pure chaos, and the occasional accidental clutch highlight.',
-        image: 'assets/armory/valorant.png',
+        image: 'assets/armory/valorant.webp',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1200px-Valorant_logo_-_pink_color_version.svg.png',
         link: 'https://www.youtube.com/@NEW-BRON/search?query=valorant'
     },
     'gta': {
         title: 'GTA V LOS SANTOS UNDERWORLD',
         desc: 'Navigating the chaotic underworld of Los Santos. From high-octane heists to the funniest moments in GTA Online, experience the ultimate open-world adventure with the squad.',
-        image: 'assets/armory/gta.png',
+        image: 'assets/armory/gta.webp',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Grand_Theft_Auto_V_logo.svg/1200px-Grand_Theft_Auto_V_logo.svg.png',
         link: 'https://www.youtube.com/@NEW-BRON/search?query=gta'
     },
     'amongus': {
         title: 'AMONG US SPATIAL SUSPENSE',
         desc: 'Trust no one. Dive into the spatial suspense of Among Us. Watch the most galaxy-brained plays and hilarious betrayals as we decode the impostors.',
-        image: 'assets/armory/amongus.png',
+        image: 'assets/armory/amongus.webp',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Among_Us_Logo.svg/1200px-Among_Us_Logo.svg.png',
         link: 'https://www.youtube.com/@NEW-BRON/search?query=amongus'
     },
     'cs2': {
         title: 'CS 2 COMPETITIVE MASTERY',
         desc: 'The global offensive continues. Experience the next generation of tactical shooters with NEW BRON\'s CS2 competitive archives. Strategic maneuvers and pro-level highlights await.',
-        image: 'assets/armory/cs2.png',
+        image: 'assets/armory/cs2.webp',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Counter-Strike_2_logo.png/1200px-Counter-Strike_2_logo.png',
         link: 'https://www.youtube.com/@NEW-BRON/search?query=cs2'
     },
     'raft': {
         title: 'RAFT OCEAN SURVIVAL LOGS',
         desc: 'Survive the vast blue. Build, sail, and conquer the ocean\'s dangers. Experience the ultimate survival journey from a simple wooden plank to a luxury sea fortress.',
-        image: 'assets/armory/raft.png',
+        image: 'assets/armory/raft.webp',
         logo: 'https://raft-game.com/img/footer_logo.png',
         link: 'https://www.youtube.com/@NEW-BRON/search?query=raft'
     }
