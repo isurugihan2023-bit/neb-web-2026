@@ -383,8 +383,10 @@ nav.scrolled {
 }
 
 .logo span {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--primary-glow);
+    background: linear-gradient(135deg, #e8220a 0%, #ff5500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(232, 60, 10, 0.4));
 }
 
 .nav-links {
@@ -786,10 +788,16 @@ nav.scrolled {
 }
 
 /* ── Left content block ── */
-.hero-left-content {
+.hero-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
     position: relative;
     z-index: 10;
-    padding: 0 0 0 clamp(30px, 6vw, 110px);
+}
+
+.hero-left-content {
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -847,6 +855,14 @@ nav.scrolled {
 
 .hero-headline span {
     display: block;
+}
+
+.hero-headline span:first-child {
+    background: linear-gradient(135deg, #e8220a 0%, #ff5500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 15px rgba(232, 60, 10, 0.4));
+    text-shadow: none; /* override the parent shadow for the gradient */
 }
 
 /* ── Description ── */
@@ -2488,8 +2504,8 @@ footer {
         font-size: 1rem;
     }
 
-    .hero-content {
-        padding: 0 20px;
+    .hero-container {
+        padding: 0 40px;
     }
 
     .section-header h2 {
@@ -2644,12 +2660,37 @@ footer {
         margin-bottom: 15px;
     }
 
+    .hero-container {
+        padding: 0 20px;
+    }
+
+    .hero-left-content {
+        margin-top: -20px;
+    }
+
+    .hero-accent-text {
+        white-space: normal;
+        font-size: 0.5rem;
+        line-height: 1.4;
+    }
+
     .hero-btns {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        align-items: stretch !important;
+        gap: 14px;
         width: 100%;
-        max-width: 320px;
+        max-width: 300px;
+        margin: 0;
+    }
+
+    .btn-hero-primary, .btn-hero-discord {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.72rem;
+        box-sizing: border-box;
     }
 
     .btn-large {
