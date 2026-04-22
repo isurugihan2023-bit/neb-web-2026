@@ -98,7 +98,7 @@ const cursorDot = document.querySelector('.cursor-dot');
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.x;
     mouse.y = e.y;
-});
+}, { passive: true });
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -307,7 +307,7 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
-});
+}, { passive: true });
 
 // Stats Counter Animation
 const counters = document.querySelectorAll('.counter');
@@ -526,7 +526,7 @@ document.querySelectorAll('.video-slider-container').forEach(container => {
             const maxScroll = grid.scrollWidth - grid.clientWidth;
             prev.style.opacity = grid.scrollLeft <= 10 ? '0.2' : '1';
             next.style.opacity = grid.scrollLeft >= maxScroll - 10 ? '0.2' : '1';
-        });
+        }, { passive: true });
 
         // Kinetic Drag-to-Scroll Support
         let isDown = false;
