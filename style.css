@@ -446,7 +446,7 @@ nav.scrolled {
     align-items: center;
     gap: 8px;
     padding: 10px 22px;
-    background: #ff1464;
+    background: linear-gradient(135deg, #e8220a 0%, #ff5500 100%);
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.72rem;
@@ -457,7 +457,7 @@ nav.scrolled {
     border-radius: 6px;
     flex-shrink: 0;
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 20px rgba(255, 20, 100, 0.4);
+    box-shadow: 0 4px 20px rgba(232, 60, 10, 0.45);
 }
 
 .nav-cta-btn i {
@@ -465,9 +465,9 @@ nav.scrolled {
 }
 
 .nav-cta-btn:hover {
-    background: #ff2d78;
+    background: linear-gradient(135deg, #ff2e0e 0%, #ff6a1a 100%);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(255, 20, 100, 0.6);
+    box-shadow: 0 8px 30px rgba(255, 80, 0, 0.65);
 }
 
 /* Cinematic Preloader */
@@ -705,22 +705,35 @@ nav.scrolled {
     background: #000;
 }
 
-/* Deep crimson radial atmosphere */
+/* Fullscreen video background */
+.hero-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Deep crimson tint overlay on top of video */
 .hero-bg-crimson {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 90% at 65% 45%, #6b0a18 0%, #3a020a 40%, #0d0003 80%, #000 100%);
-    z-index: 0;
+        radial-gradient(ellipse 120% 130% at 60% 50%, rgba(160,8,30,0.55) 0%, rgba(80,1,15,0.5) 40%, rgba(0,0,0,0.5) 100%);
+    z-index: 1;
+    mix-blend-mode: multiply;
 }
 
 /* Subtle grain/vignette overlay */
 .hero-bg-vignette {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 2;
     background:
-        radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.65) 100%);
+        radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%);
     pointer-events: none;
 }
 
@@ -763,9 +776,10 @@ nav.scrolled {
     display: block;
     object-fit: contain;
     object-position: bottom right;
+    mix-blend-mode: screen;
     animation: heroCharFloat 9s ease-in-out infinite;
     transform-origin: bottom center;
-    filter: contrast(1.05) saturate(0.92);
+    filter: contrast(1.1) saturate(0.85) brightness(0.9);
 }
 
 /* Fade the character feet with a bottom overlay */
@@ -791,7 +805,7 @@ nav.scrolled {
     position: relative;
     z-index: 10;
     padding: 0 0 0 clamp(30px, 6vw, 110px);
-    max-width: 620px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -804,7 +818,8 @@ nav.scrolled {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 28px;
+    margin-bottom: 22px;
+    margin-left: 0;
 }
 
 .hero-accent-line {
@@ -869,13 +884,13 @@ nav.scrolled {
     pointer-events: auto;
 }
 
-/* Primary pink button */
+/* Primary button — red-orange gradient (matches SUBSCRIBE) */
 .btn-hero-primary {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 16px 36px;
-    background: #ff1464;
+    background: linear-gradient(135deg, #e8220a 0%, #ff5500 100%);
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.78rem;
@@ -885,7 +900,7 @@ nav.scrolled {
     text-decoration: none;
     border-radius: 6px;
     transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 30px rgba(255, 20, 100, 0.5);
+    box-shadow: 0 6px 30px rgba(232, 60, 10, 0.5);
     position: relative;
     overflow: hidden;
 }
@@ -902,12 +917,52 @@ nav.scrolled {
 .btn-hero-primary:hover::before { left: 100%; }
 
 .btn-hero-primary:hover {
-    background: #ff2d78;
+    background: linear-gradient(135deg, #ff2e0e 0%, #ff6a1a 100%);
     transform: translateY(-3px);
-    box-shadow: 0 10px 40px rgba(255, 20, 100, 0.65);
+    box-shadow: 0 10px 40px rgba(255, 80, 0, 0.65);
 }
 
 .btn-hero-primary i { font-size: 0.75em; }
+
+/* Discord button — same style as primary, Discord purple */
+.btn-hero-discord {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: #5865F2;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 30px rgba(88, 101, 242, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-discord::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+    transition: left 0.5s ease;
+}
+
+.btn-hero-discord:hover::before { left: 100%; }
+
+.btn-hero-discord:hover {
+    background: #6d7aff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(88, 101, 242, 0.65);
+}
+
+.btn-hero-discord i { font-size: 0.9em; }
 
 /* Trailer / ghost button */
 .btn-hero-trailer {
@@ -2334,7 +2389,7 @@ footer {
     }
 
     .hero-character-img {
-        display: none;
+        display: block; /* visible on desktop — new CityPunks layout */
     }
 
     .welcome-text, .hero-subtitle-top {

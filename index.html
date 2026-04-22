@@ -85,13 +85,15 @@
 
     <!-- Hero Section — CityPunks Style -->
     <section class="hero" id="hero">
-        <!-- Cinematic red background layers -->
+        <!-- Fullscreen video background -->
+        <video class="hero-video-bg" autoplay muted loop playsinline>
+            <source src="assets/g.mp4" type="video/mp4">
+        </video>
+
+        <!-- Crimson color overlay on video -->
         <div class="hero-bg-crimson"></div>
         <div class="hero-bg-vignette"></div>
         <canvas id="hero-particles"></canvas>
-
-        <!-- Character image —  right side -->
-        <img src="assets/Untitled-1.png" alt="N3WB Character" class="hero-character-img">
 
         <!-- Left content -->
         <div class="hero-left-content reveal">
@@ -103,8 +105,8 @@
 
             <!-- Massive headline -->
             <h1 class="hero-headline">
-                <span>NO RULES.</span>
-                <span>NO LIMITS.</span>
+                <span>NEWBRON</span>
+                <span>GAMING</span>
             </h1>
 
             <!-- Description -->
@@ -115,9 +117,8 @@
                 <a href="https://www.youtube.com/@NEW-BRON" target="_blank" class="btn-hero-primary">
                     <i class="fas fa-play"></i> WATCH NOW
                 </a>
-                <a href="#videos" class="btn-hero-trailer">
-                    <span class="trailer-play-circle"><i class="fas fa-play"></i></span>
-                    Latest Videos
+                <a href="https://discord.gg/7cEa4KfX" target="_blank" class="btn-hero-discord">
+                    <i class="fab fa-discord"></i> JOIN DISCORD
                 </a>
             </div>
         </div>
