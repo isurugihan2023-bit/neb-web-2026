@@ -1024,16 +1024,16 @@ nav.scrolled {
 .hero-platforms {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .hero-platforms span {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.55rem;
-    letter-spacing: 2px;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    font-weight: 700;
 }
 
 .hero-rating {
@@ -1274,9 +1274,14 @@ nav.scrolled {
 }
 
 .hud-card h3 {
-    font-size: 3.5rem;
-    color: var(--text-white);
+    font-size: 3.8rem;
     margin: 5px 0;
+    font-family: 'Orbitron', sans-serif !important;
+    font-weight: 900;
+    background: linear-gradient(180deg, #ffffff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.15));
 }
 
 

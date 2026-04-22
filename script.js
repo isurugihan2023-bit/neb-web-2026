@@ -398,7 +398,7 @@ categoryCards.forEach(card => {
 const vanguardData = {
     'valorant': {
         title: 'VALORANT TACTICAL PRECISION',
-        desc: 'Master the art of tactical precision. Join NEW BRON in the high-stakes world of VALORANT, where ability mastery and team coordination define victory. Explore our latest agent guides and clutch highlights.',
+        desc: 'Mastering the art of... trying. Join NEW BRON on the ultimate Silver 2 ranked grind in VALORANT. Experience questionable crosshair placement, pure chaos, and the occasional accidental clutch highlight.',
         image: 'assets/armory/valorant.png',
         logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/1200px-Valorant_logo_-_pink_color_version.svg.png',
         link: 'https://www.youtube.com/@NEW-BRON/search?query=valorant'
