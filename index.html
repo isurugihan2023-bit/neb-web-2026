@@ -63,7 +63,7 @@
 
     <!-- Navbar -->
     <nav id="navbar">
-        <div class="container">
+        <div class="nav-inner">
             <a href="#" class="logo">
                 NEW <span>BRON</span>
             </a>
@@ -74,44 +74,64 @@
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#latest-live">Live</a></li>
-                <li><a href="#categories">Categories</a></li>
+                <li><a href="#categories">Games</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="https://www.youtube.com/@NEW-BRON" target="_blank" class="glow-text">YouTube</a></li>
             </ul>
+            <a href="https://www.youtube.com/@NEW-BRON" target="_blank" class="nav-cta-btn">
+                <i class="fas fa-play"></i> SUBSCRIBE
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section Overhaul -->
-    <section class="hero" id="hero" style="position: relative; overflow: hidden;">
-        <!-- Section BG Effect -->
-        <div class="section-bg-fx" id="hero-bg-fx">
-            <div class="sbg-scanline"></div>
-        </div>
+    <!-- Hero Section — CityPunks Style -->
+    <section class="hero" id="hero">
+        <!-- Cinematic red background layers -->
+        <div class="hero-bg-crimson"></div>
+        <div class="hero-bg-vignette"></div>
         <canvas id="hero-particles"></canvas>
+
+        <!-- Character image —  right side -->
         <img src="assets/Untitled-1.png" alt="N3WB Character" class="hero-character-img">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content reveal">
-                <p class="hero-subtitle-top">GAMING &amp; STREAMING CHANNEL</p>
-                <h1>
-                    <div class="top-line" data-text="NEW BRON">NEW <span class="bron">BRON</span></div>
-                    <div class="outline-text" data-text="GAMING">GAMING</div>
-                </h1>
 
-                <div class="hero-btns">
-                    <a href="#videos" class="btn btn-primary btn-large"><i class="fas fa-play"></i> WATCH VIDEOS</a>
-                    <a href="#latest-live" class="btn btn-outline btn-large"><i class="fas fa-broadcast-tower"></i> WATCH LIVE</a>
-                    <a href="https://discord.gg/7cEa4KfX" target="_blank" class="btn btn-pfp btn-large"><i class="fab fa-discord"></i> JOIN DISCORD</a>
-                </div>
+        <!-- Left content -->
+        <div class="hero-left-content reveal">
+            <!-- Yellow accent line -->
+            <div class="hero-accent-row">
+                <span class="hero-accent-line"></span>
+                <span class="hero-accent-text">GAMING &amp; STREAMING CHANNEL &nbsp;·&nbsp; 2026</span>
+            </div>
 
-                <div class="social-dock reveal">
-                    <div class="dock-flare"></div>
-                    <a href="https://www.youtube.com/@NEW-BRON/videos" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.twitch.tv/newbronsl" target="_blank" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
-                    <a href="https://www.tiktok.com/@n3wb067" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/isuru4444/?hl=en" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://steamcommunity.com/profiles/76561199812930590/" target="_blank" title="Steam"><i class="fa-brands fa-steam"></i></a>
-                </div>
+            <!-- Massive headline -->
+            <h1 class="hero-headline">
+                <span>NO RULES.</span>
+                <span>NO LIMITS.</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-desc">5+ games. Infinite content. One channel that never sleeps&nbsp;&mdash;&nbsp;and never holds back. Join the squad.</p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-btns">
+                <a href="https://www.youtube.com/@NEW-BRON" target="_blank" class="btn-hero-primary">
+                    <i class="fas fa-play"></i> WATCH NOW
+                </a>
+                <a href="#videos" class="btn-hero-trailer">
+                    <span class="trailer-play-circle"><i class="fas fa-play"></i></span>
+                    Latest Videos
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom-right: platform + rating -->
+        <div class="hero-bottom-bar">
+            <div class="hero-platforms">
+                <span>YouTube</span>
+                <span>Twitch</span>
+                <span>TikTok</span>
+            </div>
+            <div class="hero-rating">
+                <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="hero-rating-num">9.4&nbsp;/&nbsp;10</span>
             </div>
         </div>
     </section>
