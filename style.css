@@ -324,6 +324,43 @@ h1, h2, h3, .logo {
     transform: translateY(-1px) scale(0.98);
 }
 
+/* ── DISCORD BUTTON: Signature Purple Glow ── */
+.btn-discord-profile {
+    background: linear-gradient(135deg, #5865F2 0%, #4752C4 50%, #5865F2 100%);
+    background-size: 200% 200%;
+    color: #ffffff;
+    border: 1px solid rgba(88, 101, 242, 0.4);
+}
+
+.btn-discord-profile::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.15) 40%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.15) 60%, transparent 100%);
+    transition: left 0.6s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.btn-discord-profile:hover::before {
+    left: 100%;
+}
+
+.btn-discord-profile:hover {
+    transform: translateY(-4px);
+    background-position: 100% 50%;
+    filter: brightness(1.15);
+    box-shadow:
+        0 8px 25px rgba(88, 101, 242, 0.4),
+        0 0 0 1px rgba(88, 101, 242, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.btn-discord-profile:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
 /* â•â•â• NAVBAR â•â•â• */
 nav {
     position: fixed;
@@ -815,14 +852,21 @@ nav.scrolled {
     margin-left: 0;
 }
 
+@keyframes accentLineExpand {
+    0% { width: 0; opacity: 0; }
+    100% { width: 42px; opacity: 1; }
+}
+
 .hero-accent-line {
     display: inline-block;
-    width: 42px;
-    min-width: 42px;
+    min-width: 0;
+    width: 0;
     height: 2px;
     background: #e8c030;
     flex-shrink: 0;
     border-radius: 1px;
+    animation: accentLineExpand 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    animation-delay: 4.5s; /* Fires immediately after preloader finishes */
 }
 
 .hero-accent-text {
@@ -865,6 +909,17 @@ nav.scrolled {
     text-shadow: none; /* override the parent shadow for the gradient */
 }
 
+.hero-headline span:last-child {
+    background: linear-gradient(90deg, #ffffff 0%, #808080 40%, #ffffff 50%, #808080 60%, #ffffff 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textShine 4s linear infinite;
+    text-shadow: none;
+    filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.2));
+}
+
 /* ── Description ── */
 .hero-desc {
     font-family: 'Inter', sans-serif;
@@ -889,8 +944,10 @@ nav.scrolled {
 .btn-hero-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    min-width: 240px;
     gap: 10px;
-    padding: 16px 36px;
+    padding: 16px 20px;
     background: linear-gradient(135deg, #e8220a 0%, #ff5500 100%);
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
@@ -929,8 +986,10 @@ nav.scrolled {
 .btn-hero-discord {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    min-width: 240px;
     gap: 10px;
-    padding: 16px 36px;
+    padding: 16px 20px;
     background: #5865F2;
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
@@ -1009,52 +1068,65 @@ nav.scrolled {
     transform: scale(1.1);
 }
 
-/* ── Bottom bar: platforms + rating ── */
-.hero-bottom-bar {
+/* ── Tactical Scroll Indicator ── */
+.hero-scroll-indicator {
     position: absolute;
-    bottom: 36px;
-    right: clamp(24px, 4vw, 60px);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    pointer-events: none;
-}
-
-.hero-platforms {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.hero-platforms span {
-    font-family: 'Oxanium', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    font-weight: 700;
-}
-
-.hero-rating {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
+    align-items: center;
+    gap: 12px;
+    z-index: 20;
+    text-decoration: none;
+    opacity: 0.65;
+    transition: all 0.4s ease;
 }
 
-.hero-stars {
-    color: #f5c518;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
+.hero-scroll-indicator:hover {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
 }
 
-.hero-rating-num {
+.scroll-mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-scroll-indicator:hover .scroll-mouse {
+    border-color: #ff5500;
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.4);
+}
+
+.scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 2px;
+    margin-top: 6px;
+    animation: scrollWheelPulse 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
+}
+
+@keyframes scrollWheelPulse {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0; }
+}
+
+.scroll-text {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.6rem;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.55);
-    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 /* â•â•â• HERO RESPONSIVE BREAKPOINTS â•â•â• */
@@ -2661,6 +2733,10 @@ footer {
 
     nav.scrolled {
         padding: 10px 0;
+    }
+
+    .nav-cta-btn {
+        display: none; /* Hide on mobile to prevent squishing the hamburger menu */
     }
 
     /* === HERO === */
