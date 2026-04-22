@@ -2126,14 +2126,15 @@ footer {
 }
 
 .about-social a {
-    color: rgba(160, 160, 160, 0.6);
-    font-size: 1.3rem;
-    transition: var(--transition);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     position: static;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
 }
 
 /* Cancel any inherited pseudo-element underlines */
@@ -2144,8 +2145,9 @@ footer {
 }
 
 .about-social a:hover {
-    color: #ffffff;
-    transform: translateY(-3px);
+    color: #ff5500;
+    transform: translateY(-5px) scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(255, 85, 0, 0.8));
 }
 
 .about-btns {
