@@ -215,10 +215,10 @@ function initHUDSystem() {
     particles = [];
     orbs = [];
     sparks = [];
-    // Reduce particles on mobile for better performance
     const isMobile = window.innerWidth <= 768;
-    const particleCount = isMobile ? 15 : 35;
-    const orbCount = isMobile ? 1 : 2;
+    // Heavily reduce particles on mobile for smooth 60fps
+    const particleCount = isMobile ? 8 : 35;
+    const orbCount = isMobile ? 0 : 2;
     for (let i = 0; i < particleCount; i++) particles.push(new Particle());
     for (let i = 0; i < orbCount; i++) orbs.push(new GlowOrb());
 }
@@ -248,7 +248,11 @@ function updateHUDParallax() {
 
 function animateHUD() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    updateHUDParallax();
+
+    // Skip expensive parallax on mobile — no mouse events anyway
+    if (window.innerWidth > 768) {
+        updateHUDParallax();
+    }
     
     // Draw Background Depth
     orbs.forEach(o => { o.update(); o.draw(); });
@@ -264,9 +268,10 @@ function animateHUD() {
     requestAnimationFrame(animateHUD);
 }
 
-// Global Click Spark Listener
+// Global Click Spark Listener — fewer sparks on mobile
 window.addEventListener('mousedown', (e) => {
-    for (let i = 0; i < 12; i++) {
+    const sparkCount = window.innerWidth <= 768 ? 4 : 12;
+    for (let i = 0; i < sparkCount; i++) {
         sparks.push(new Spark(e.clientX, e.clientY));
     }
 });
@@ -599,6 +604,44 @@ if (hamburger && navLinks) {
 }
 
 console.log("NEW BRON. Twin Horizon Engine Finalized 🚀");
+
+// ─── Theme Toggle System ──────────────────────────────────────────────────
+(function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem('nb-theme') || 'dark';
+    applyTheme(savedTheme);
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+            localStorage.setItem('nb-theme', newTheme);
+        });
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            html.setAttribute('data-theme', 'light');
+            if (themeIcon) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeIcon.style.transform = 'rotate(360deg)';
+            }
+        } else {
+            html.removeAttribute('data-theme');
+            if (themeIcon) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+    }
+})();
 
 // ─── Plasma WebGL2 Background ─────────────────────────────────────────────
 (function () {
