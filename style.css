@@ -924,7 +924,8 @@ nav.scrolled {
     font-size: clamp(0.8rem, 1.3vw, 0.95rem);
     line-height: 1.65;
     color: rgba(255,255,255,0.62);
-    max-width: 400px;
+    width: 460px;
+    max-width: 100%;
     margin: 0 0 40px 0;
     font-weight: 400;
 }
@@ -933,7 +934,9 @@ nav.scrolled {
 .hero-btns {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
+    width: 460px;
+    max-width: 100%;
     flex-wrap: wrap;
     pointer-events: auto;
 }
@@ -943,9 +946,10 @@ nav.scrolled {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 240px;
-    gap: 10px;
-    padding: 16px 20px;
+    flex: 1;
+    min-width: 180px;
+    gap: 8px;
+    padding: 16px 15px;
     background: linear-gradient(135deg, #e8220a 0%, #ff5500 100%);
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
@@ -985,9 +989,10 @@ nav.scrolled {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 240px;
-    gap: 10px;
-    padding: 16px 20px;
+    flex: 1;
+    min-width: 180px;
+    gap: 8px;
+    padding: 16px 15px;
     background: #5865F2;
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
