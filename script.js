@@ -610,6 +610,7 @@ console.log("NEW BRON. Twin Horizon Engine Finalized 🚀");
     const toggleBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const html = document.documentElement;
+    const heroVideo = document.querySelector('.hero-video-bg');
 
     // Load saved theme from localStorage
     const savedTheme = localStorage.getItem('nb-theme') || 'dark';
@@ -632,12 +633,20 @@ console.log("NEW BRON. Twin Horizon Engine Finalized 🚀");
                 themeIcon.classList.add('fa-sun');
                 themeIcon.style.transform = 'rotate(360deg)';
             }
+            if (heroVideo) {
+                heroVideo.src = 'assets/r.mp4';
+                heroVideo.play().catch(() => {});
+            }
         } else {
             html.removeAttribute('data-theme');
             if (themeIcon) {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
                 themeIcon.style.transform = 'rotate(0deg)';
+            }
+            if (heroVideo) {
+                heroVideo.src = 'assets/g.mp4';
+                heroVideo.play().catch(() => {});
             }
         }
     }
