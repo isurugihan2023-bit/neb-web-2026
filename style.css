@@ -53,6 +53,10 @@ body {
     mix-blend-mode: screen; /* blends nicely over pure black */
 }
 
+[data-theme="light"] .plasma-canvas {
+    display: none !important;
+}
+
 .hud-grid-overlay {
     position: absolute;
     inset: -50% 0 0 -50%;
@@ -785,6 +789,10 @@ nav.scrolled {
     mix-blend-mode: multiply;
 }
 
+[data-theme="light"] .hero-bg-crimson {
+    display: none;
+}
+
 /* Subtle grain/vignette overlay */
 .hero-bg-vignette {
     position: absolute;
@@ -793,6 +801,10 @@ nav.scrolled {
     background:
         radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%);
     pointer-events: none;
+}
+
+[data-theme="light"] .hero-bg-vignette {
+    display: none;
 }
 
 /* Grain texture via pseudo */
@@ -851,6 +863,10 @@ nav.scrolled {
     background: linear-gradient(to top, #000 0%, transparent 100%);
     z-index: 4;
     pointer-events: none;
+}
+
+[data-theme="light"] .hero::after {
+    display: none;
 }
 
 @keyframes heroCharFloat {
@@ -3676,8 +3692,43 @@ footer {
     border-color: rgba(0, 0, 0, 0.2);
 }
 
-/* ── Hero (keep dark — cinematic) ── */
-/* Hero stays dark for both themes, it's cinematic */
+/* ── Hero overrides ── */
+[data-theme="light"] .hero {
+    background: #f5f5f7;
+}
+
+[data-theme="light"] .hero-desc {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+[data-theme="light"] .hero-headline {
+    text-shadow: none !important;
+}
+
+[data-theme="light"] .hero-headline span {
+    filter: none !important;
+    text-shadow: none !important;
+}
+
+[data-theme="light"] .hero-headline span:first-child {
+    background: linear-gradient(135deg, #e8220a 0%, #ff5500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .hero-headline span:last-child {
+    background: linear-gradient(90deg, #1a1a2e 0%, #5a5a6e 40%, #1a1a2e 50%, #5a5a6e 60%, #1a1a2e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .hero-accent-text {
+    color: #000000 !important;
+    font-weight: 800;
+}
 
 /* ── Stats / HUD Cards ── */
 [data-theme="light"] .performance-command {

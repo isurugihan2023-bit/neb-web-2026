@@ -220,6 +220,10 @@ void main() {
     let raf = 0;
 
     function loop(now) {
+      if (!canvas.offsetParent && canvas.style.display !== 'block') {
+         raf = requestAnimationFrame(loop);
+         return;
+      }
       let t = (now - t0) * 0.001;
       let dir = dirMult;
 
