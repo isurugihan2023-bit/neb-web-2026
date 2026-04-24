@@ -634,7 +634,7 @@ console.log("NEW BRON. Twin Horizon Engine Finalized 🚀");
                 themeIcon.style.transform = 'rotate(360deg)';
             }
             if (heroVideo) {
-                heroVideo.src = 'assets/r.mp4';
+                heroVideo.src = 'assets/Enhancer-Ultra HD-r.mp4';
                 heroVideo.play().catch(() => {});
             }
         } else {
