@@ -3,608 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEW-B GAMING | Level Up Your Experience</title>
-    <meta name="description" content="Official website of NEW-B GAMING. High-energy gameplay, reviews, and tutorials. Join the squad!">
-    <meta name="keywords" content="NEW BRON, Gaming, YouTube, Valorant, GTA V, Streaming, Gameplay, Highlights, Esports">
-    <meta property="og:title" content="NEW-B GAMING | Level Up Your Experience">
-    <meta property="og:description" content="Official website of NEW-B GAMING. High-energy gameplay, reviews, and tutorials. Join the squad!">
-    <meta property="og:image" content="https://isurugihan2023-bit.github.io/neb-web-2026/assets/nb_logo.png">
-    <meta property="og:url" content="https://isurugihan2023-bit.github.io/neb-web-2026/">
+    <title>Bobo Bot | The Next Generation Discord AI</title>
+    <link rel="icon" type="image/png" href="images/bobobo.png">
+    <meta name="description" content="Powerful AI, Smart Music, Automation, Analytics and Moderation — All in one Discord Bot.">
+    <meta property="og:title" content="Bobo Bot | The Next Generation Discord AI">
+    <meta property="og:description" content="Powerful AI, Smart Music, Automation, Analytics and Moderation — All in one Discord Bot.">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NEW-B GAMING | Level Up Your Experience">
-    <meta name="twitter:description" content="Official website of NEW-B GAMING. High-energy gameplay, reviews, and tutorials. Join the squad!">
-    <meta name="twitter:image" content="https://isurugihan2023-bit.github.io/neb-web-2026/assets/nb_logo.png">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/nb_logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#0284c7">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="plasma.js" defer></script>
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hyper-Horizon HUD System (Global Background) -->
-    <div class="hud-background-system" id="plasma-mount">
-        <div class="hud-grid-overlay"></div>
-        <div class="hud-shards-layer">
-            <div class="cyber-shard s1"></div>
-            <div class="cyber-shard s2"></div>
-            <div class="cyber-shard s3"></div>
-        </div>
-        <div class="hud-scanline-texture"></div>
-        <div class="hud-bg-text-system">
-            <div class="hud-bg-text-line">NEWBRON</div>
-        </div>
-        <div class="hud-vignette"></div>
-    </div>
 
-    <!-- Cinematic Preloader -->
-    <div id="preloader">
-        <svg style="display:none;">
-            <filter id="real-glitch">
-                <feTurbulence type="turbulence" baseFrequency="0.01 0.1" numOctaves="2" seed="5" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" />
-            </filter>
-        </svg>
-        <div class="preloader-grid"></div>
-        <div class="preloader-scanline"></div>
-        <div class="preloader-content">
-            <div class="nb-logo-container">
-                <img src="assets/nb_logo.png" class="nb-logo-img r" alt="NB Logo Red">
-                <img src="assets/nb_logo.png" class="nb-logo-img c" alt="NB Logo Cyan">
-                <img src="assets/nb_logo.png" class="nb-logo-img m" alt="NB Logo Magenta">
+    <!-- ── NAVBAR ─────────────────────── -->
+    <nav class="nav" id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#home" class="nav-logo">
+                    <img src="images/bobobo.png" alt="Bobo" onerror="this.src='https://ui-avatars.com/api/?name=B&background=0284c7&color=fff'">
+                    <span>Bobo</span>
+                    <span class="nav-logo-dot"></span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#commands">Commands</a></li>
+                    <li><a href="#stats">Stats</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" onclick="openPrivateModal(event)" class="nav-invite">
+                        <i class="fab fa-discord"></i> Invite Bobo
+                    </a>
+                </div>
+                <button class="hamburger" aria-label="menu"><i class="fas fa-bars"></i></button>
             </div>
-            <div class="loading-bar-container">
-                <div id="progress-bar"></div>
-            </div>
-            <p class="sync-text"><span id="sync-typed-text"></span></p>
-            <div class="percent">0%</div>
-        </div>
-    </div>
-
-    <!-- Navbar -->
-    <nav id="navbar">
-        <div class="nav-inner">
-            <a href="#" class="logo">
-                NEW <span>BRON</span>
-            </a>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#latest-live">Live</a></li>
-                <li><a href="#categories">Games</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
-                <i class="fas fa-moon" id="theme-icon"></i>
-            </button>
-            <a href="https://www.youtube.com/@NEW-BRON" target="_blank" class="nav-cta-btn">
-                <i class="fas fa-play"></i> SUBSCRIBE
-            </a>
         </div>
     </nav>
 
-    <!-- Hero Section — CityPunks Style -->
-    <section class="hero" id="hero">
-        <!-- Fullscreen video background -->
-        <video class="hero-video-bg" autoplay muted loop playsinline>
-            <source src="assets/g.mp4" type="video/mp4">
-        </video>
-
-        <!-- Crimson color overlay on video -->
-        <div class="hero-bg-crimson"></div>
-        <div class="hero-bg-vignette"></div>
-        <canvas id="hero-particles"></canvas>
-
-        <!-- Left content -->
-        <div class="hero-container">
-            <div class="hero-left-content reveal">
-                <!-- Yellow accent line -->
-                <div class="hero-accent-row">
-                    <span class="hero-accent-line"></span>
-                    <span class="hero-accent-text">GAMING &amp; STREAMING CHANNEL &nbsp;·&nbsp; 2026</span>
-                </div>
-
-                <!-- Massive headline -->
-                <h1 class="hero-headline">
-                    <span>NEWBRON</span>
-                    <span>GAMING</span>
-                </h1>
-
-                <!-- Description -->
-                <p class="hero-desc">5+ games. Infinite content. One channel that never sleeps&nbsp;&mdash;&nbsp;and never holds back. Join the squad.</p>
-
-                <!-- CTA Buttons -->
-                <div class="hero-btns">
-                    <a href="https://www.youtube.com/@NEW-BRON" target="_blank" class="btn-hero-primary">
-                        <i class="fas fa-play"></i> WATCH NOW
-                    </a>
-                    <a href="https://discord.gg/7cEa4KfX" target="_blank" class="btn-hero-discord">
-                        <i class="fab fa-discord"></i> JOIN DISCORD
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tactical Scroll Indicator -->
-        <a href="#stats" class="hero-scroll-indicator">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-            <span class="scroll-text">SCROLL TO INITIATE</span>
-        </a>
-    </section>
-
-    <!-- Performance Command (Stats Overhaul) -->
-    <section class="performance-command" id="stats" style="position: relative; overflow: hidden;">
-        <!-- Section BG Effect -->
-        <div class="section-bg-fx" id="stats-bg-fx">
-            <div class="sbg-scanline"></div>
-        </div>
-        <div class="container HUD-grid">
-            <div class="section-header reveal">
-                <h2>CHANNEL STATUS</h2>
-                <div class="dash"></div>
-            </div>
-
-            <div class="hud-main-grid">
-                <!-- Data Performance Cards (Stats) -->
-                <div class="hud-card stat-module perf-high reveal">
-                    <div class="card-header">
-                        <span class="module-title">NETWORK REACH</span>
-                        <span class="status-indicator">ACTIVE</span>
+    <!-- ── HERO ─────────────────────── -->
+    <section class="hero" id="home">
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="hero-inner">
+                <!-- Next Level Hero Pill -->
+                <div class="hero-pill fade-up" style="animation-delay:0s">
+                    <div class="pill-avatar-wrapper">
+                        <img src="images/bobobo.png" alt="Bobo" class="pill-avatar" onerror="this.src='https://ui-avatars.com/api/?name=B&background=0284c7&color=fff'">
+                        <div class="pill-status">
+                            <div class="pill-status-pulse"></div>
+                        </div>
                     </div>
-                    <div class="card-body">
+                    <div class="pill-info">
+                        <div class="pill-name">
+                            Bobo
+                            <span class="pill-bot-tag"><i class="fas fa-check"></i> BOT</span>
+                        </div>
+                        <div class="pill-activity">
+                            <div class="audio-bars">
+                                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            </div>
+                            Playing <span>High Fidelity Music</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up" style="animation-delay:0.1s">
+                    <div class="hero-float">
+                        <h1 class="hero-heading">
+                            Ultimate Music Bot<br>For Your <span class="grad">Discord Server</span>
+                        </h1>
+                    </div>
+                </div>
+                <p class="hero-sub fade-up" style="animation-delay:0.2s">
+                    The ultimate Discord Music OS. Combining high-fidelity music streaming, interactive UI panels, real-time audio filters, and seamless playback for your community.
+                </p>
+                <div class="hero-btns fade-up" style="animation-delay:0.3s">
+                    <a href="#" onclick="openPrivateModal(event)" class="btn btn-primary">
+                        <i class="fab fa-discord"></i> Add to Discord
+                    </a>
+                </div>
+                <!-- Live stat chips -->
+                <div class="hero-chips fade-up" style="animation-delay:0.4s">
+                    <div class="chip">
+                        <i class="fas fa-server"></i>
+                        <div>
+                            <div class="chip-val" id="hero-servers">--</div>
+                            <div class="chip-label">Servers</div>
+                        </div>
+                    </div>
+                    <div class="chip">
                         <i class="fas fa-users"></i>
-                        <h3 class="counter mono-text" data-target="75">0</h3>
-                        <p class="metric-label">SUBSCRIBERS</p>
-                        <span class="growth-tag">+12.4%</span>
+                        <div>
+                            <div class="chip-val" id="hero-members">--</div>
+                            <div class="chip-label">Members</div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="hud-card stat-module perf-mid reveal">
-                    <div class="card-header">
-                        <span class="module-title">CONTENT FEED</span>
-                        <span class="status-indicator">SYNCED</span>
+                    <div class="chip">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <div class="chip-val" id="hero-uptime">--</div>
+                            <div class="chip-label">Uptime</div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <i class="fas fa-video"></i>
-                        <h3 class="counter mono-text" data-target="28">0</h3>
-                        <p class="metric-label">VIDEOS</p>
-                        <span class="growth-tag">+5.1%</span>
-                    </div>
-                </div>
-
-                <div class="hud-card stat-module perf-high reveal">
-                    <div class="card-header">
-                        <span class="module-title">GLOBAL IMPACT</span>
-                        <span class="status-indicator">OPTIMAL</span>
-                    </div>
-                    <div class="card-body">
-                        <i class="fas fa-eye"></i>
-                        <h3 class="counter mono-text" data-target="1592">0</h3>
-                        <p class="metric-label">TOTAL VIEWS</p>
-                        <span class="growth-tag">+24.8%</span>
+                    <div class="chip">
+                        <i class="fas fa-signal"></i>
+                        <div>
+                            <div class="chip-val" id="hero-ping">--</div>
+                            <div class="chip-label">Ping</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Videos Section -->
-    <section class="section-padding" id="videos" style="position: relative; overflow: hidden;">
-        <!-- Section BG Effect -->
-        <div class="section-bg-fx" id="videos-bg-fx">
-            <div class="sbg-scanline"></div>
-        </div>
+    <!-- ── ABOUT SECTION ─────────────────────── -->
+    <section id="about" style="padding: 110px 0;">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>LATEST VIDEOS</h2>
-                <div class="dash"></div>
+            <!-- Header -->
+            <div class="sec-head reveal">
+                <div class="pill" style="justify-content:center; margin-bottom: 20px;">
+                    <span class="pill-dot"></span> About
+                </div>
+                <h2 class="sec-title">About <span class="grad">BOBO Bot</span></h2>
+                <p class="sec-sub" style="max-width: 800px; margin: 0 auto;">BOBO was created for Discord communities who demand the ultimate music experience. It delivers crystal-clear audio, seamless Spotify & YouTube integrations, and powerful interactive playback controls.</p>
             </div>
-            <div class="video-slider-container">
-                <!-- Navigation Arrows -->
-                <button class="slider-arrow left" id="prev-video" aria-label="Previous Videos">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow right" id="next-video" aria-label="Next Videos">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
 
-                <div class="video-grid" id="video-container">
-                <!-- Latest Real Video Override -->
-                <div class="video-card reveal">
-                    <div class="video-thumb">
-                        <img src="https://img.youtube.com/vi/mjKxL6CF-hA/maxresdefault.jpg" alt="Valorant X bbno$ - 1-800" loading="lazy">
-                        <div class="play-btn">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-meta">
-                            <span><i class="fas fa-eye"></i> 135 Views</span>
-                            <span><i class="far fa-heart"></i> 6 Likes</span>
-                        </div>
-                        <h4>Valorant X bbno$ - 1-800</h4>
-                        <p>High-energy Valorant gameplay montage featuring the track "1-800" by bbno$. Pure clutch energy.</p>
-                        <a href="https://www.youtube.com/watch?v=mjKxL6CF-hA" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Now</a>
-                    </div>
+            <!-- Highlight cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 16px; margin-bottom: 40px;">
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-clock"></i></div>
+                    <h3 class="feat-card-title">99.9% Uptime</h3>
+                    <p>Reliable service you can count on, day and night.</p>
                 </div>
-
-                <!-- Video Item 2 (Real Data) -->
-                <div class="video-card reveal">
-                    <div class="video-thumb">
-                        <img src="https://img.youtube.com/vi/ldxzBPJKwo0/maxresdefault.jpg" alt="Los Santos Drug Wars" loading="lazy">
-                        <div class="play-btn">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-meta">
-                            <span><i class="fas fa-eye"></i> 58 Views</span>
-                            <span><i class="far fa-heart"></i> 3 Likes</span>
-                        </div>
-                        <h4>Los Santos Drug Wars ep 01</h4>
-                        <p>Join the underworld with BKGamingZone in this first episode of the Los Santos drug wars saga.</p>
-                        <a href="https://www.youtube.com/watch?v=ldxzBPJKwo0" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Now</a>
-                    </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3 class="feat-card-title">Secure & Safe</h3>
+                    <p>Full Discord OAuth2 integration and advanced data protection.</p>
                 </div>
-
-                <!-- Video Item 3 (Real Data) -->
-                <div class="video-card reveal">
-                    <div class="video-thumb">
-                        <img src="https://img.youtube.com/vi/PoABEQAzypI/maxresdefault.jpg" alt="GTA V Online Highlight" loading="lazy">
-                        <div class="play-btn">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-meta">
-                            <span><i class="fas fa-eye"></i> 20 Views</span>
-                            <span><i class="far fa-heart"></i> 2 Likes</span>
-                        </div>
-                        <h4>පොලිසියට අහුවුනා | GTA V Online</h4>
-                        <p>Intense police chase in Los Santos with @BKGamingZone and @gamingjaveeya. High stakes gameplay.</p>
-                        <a href="https://www.youtube.com/watch?v=PoABEQAzypI" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Now</a>
-                    </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-music"></i></div>
+                    <h3 class="feat-card-title">High-Fidelity Audio</h3>
+                    <p>Crystal clear 24/7 music streaming with advanced filters.</p>
                 </div>
-
-                <!-- Video Item 4 (New Live Content) -->
-                <div class="video-card reveal">
-                    <div class="video-thumb">
-                        <img src="https://img.youtube.com/vi/VGjM3vIjYyc/maxresdefault.jpg" alt="GTA Online Sinhala" loading="lazy">
-                        <div class="play-btn">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-meta">
-                            <span><i class="fas fa-eye"></i> 29 Views</span>
-                            <span><i class="far fa-heart"></i> 4 Likes</span>
-                        </div>
-                        <h4>GTA Online Sinhala | Camp</h4>
-                        <p>Epic camp raid in GTA Online with @BKGamingZone and Tharusha. Pure tactical chaos in Sinhala.</p>
-                        <a href="https://www.youtube.com/watch?v=VGjM3vIjYyc" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Now</a>
-                    </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3 class="feat-card-title">Fast Response</h3>
+                    <p>Commands execute within milliseconds across all servers.</p>
                 </div>
+            </div>
 
-                <!-- Video Item 5 (New Live Content) -->
-                <div class="video-card reveal">
-                    <div class="video-thumb">
-                        <img src="https://img.youtube.com/vi/ILth2MGNfgg/maxresdefault.jpg" alt="Grand Theft Auto V" loading="lazy">
-                        <div class="play-btn">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-meta">
-                            <span><i class="fas fa-eye"></i> 59 Views</span>
-                            <span><i class="far fa-heart"></i> 7 Likes</span>
-                        </div>
-                        <h4>Grand Theft Auto V | Car Heist</h4>
-                        <p>Stealing high-end vehicles in Los Santos with BKGamingZone. Fast cars and narrow escapes.</p>
-                        <a href="https://www.youtube.com/watch?v=ILth2MGNfgg" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Now</a>
-                    </div>
+            <!-- Big stat boxes -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 16px;">
+                <div class="feat-card reveal" style="text-align: center; padding: 44px 24px;">
+                    <i class="fas fa-server" style="font-size: 2rem; color: var(--p400); margin-bottom: 18px; display:block;"></i>
+                    <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); margin-bottom: 8px;" id="about-servers">100+</div>
+                    <div style="font-size: 0.82rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Active Servers</div>
                 </div>
-            </div> <!-- video-grid -->
-        </div> <!-- video-slider-container -->
-    </div> <!-- container HUD-grid -->
-</section>
-
-    <!-- Latest Live Section -->
-    <section class="section-padding" id="latest-live" style="position: relative; overflow: hidden;">
-        <!-- Section BG Effect -->
-        <div class="section-bg-fx" id="live-bg-fx">
-            <div class="sbg-scanline"></div>
+                <div class="feat-card reveal" style="text-align: center; padding: 44px 24px;">
+                    <i class="fas fa-terminal" style="font-size: 2rem; color: var(--p400); margin-bottom: 18px; display:block;"></i>
+                    <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); margin-bottom: 8px;">15+</div>
+                    <div style="font-size: 0.82rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Commands</div>
+                </div>
+                <div class="feat-card reveal" style="text-align: center; padding: 44px 24px;">
+                    <i class="fas fa-users" style="font-size: 2rem; color: var(--p400); margin-bottom: 18px; display:block;"></i>
+                    <div style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); margin-bottom: 8px;" id="about-users">100+</div>
+                    <div style="font-size: 0.82rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Users</div>
+                </div>
+                <div class="feat-card reveal" style="text-align: center; padding: 44px 24px;">
+                    <div class="ping-bars">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <div id="about-ping" style="font-size: 2.5rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); margin-bottom: 8px;">2ms</div>
+                    <div style="font-size: 0.82rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Avg. Ping</div>
+                </div>
+            </div>
         </div>
-        <div class="container HUD-grid">
-            <div class="section-header reveal">
-                <h2>LATEST LIVE</h2>
-                <div class="dash"></div>
+    </section>
+
+    <!-- ── STATS STRIP ─────────────────────── -->
+    <section class="stats-strip" id="stats">
+        <div class="container">
+            <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+                <div class="hero-pill reveal">
+                    <div class="pill-avatar-wrapper">
+                        <img src="images/bobobo.png" alt="Bobo" class="pill-avatar" onerror="this.src='https://ui-avatars.com/api/?name=B&background=0284c7&color=fff'">
+                        <div class="pill-status">
+                            <div class="pill-status-pulse"></div>
+                        </div>
+                    </div>
+                    <div class="pill-info">
+                        <div class="pill-name">
+                            Bobo <span class="pill-bot-tag"><i class="fas fa-check"></i> BOT</span>
+                        </div>
+                        <div class="pill-activity" style="display: flex; align-items: center;">
+                            <div class="audio-bars" style="margin-right: 6px;">
+                                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            </div>
+                            <span class="dp-dynamic-text" style="transition: opacity 0.3s ease;">100+ SERVERS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-strip-inner">
+                <div class="stat-item">
+                    <div class="stat-num stat-number" id="server-count-stat" data-target="100" data-suffix="+">0</div>
+                    <div class="stat-lbl">Active Servers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num stat-number" id="user-count-stat" data-target="100" data-suffix="+">0</div>
+                    <div class="stat-lbl">Total Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num stat-number" data-target="15" data-suffix="+">0</div>
+                    <div class="stat-lbl">Commands</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num stat-number" data-target="99.99" data-suffix="%">0</div>
+                    <div class="stat-lbl">Uptime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PLATFORMS ─────────────────────── -->
+    <section class="platforms-section" id="platforms" style="padding: 100px 0 20px;">
+        <div class="container">
+            <div class="sec-head reveal" style="margin-bottom: 50px;">
+                <h2 class="sec-title" style="font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700;">Stream your favorite tracks from the world's leading music platforms</h2>
             </div>
             
-            <div class="video-slider-container">
-                <!-- Navigation Arrows -->
-                <button class="slider-arrow left" id="prev-live" aria-label="Previous Lives">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow right" id="next-live" aria-label="Next Lives">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <!-- YouTube -->
+                <div class="feat-card reveal" style="text-align: center; padding: 40px 24px;">
+                    <i class="fab fa-youtube" style="font-size: 3.5rem; color: #ff0000; margin-bottom: 20px; display: block;"></i>
+                    <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: #fff;">YouTube</h3>
+                    <p style="color: var(--sub); font-size: 0.95rem; line-height: 1.6;">Universal access to the world's largest catalog of high-fidelity tracks and live streams.</p>
+                </div>
+                <!-- SoundCloud -->
+                <div class="feat-card reveal" style="text-align: center; padding: 40px 24px;">
+                    <i class="fab fa-soundcloud" style="font-size: 3.5rem; color: #ff5500; margin-bottom: 20px; display: block;"></i>
+                    <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: #fff;">SoundCloud</h3>
+                    <p style="color: var(--sub); font-size: 0.95rem; line-height: 1.6;">Stream exclusive remixes, podcasts, and independent artists effortlessly.</p>
+                </div>
+                <!-- Spotify -->
+                <div class="feat-card reveal" style="text-align: center; padding: 40px 24px;">
+                    <i class="fab fa-spotify" style="font-size: 3.5rem; color: #1DB954; margin-bottom: 20px; display: block;"></i>
+                    <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: #fff;">Spotify</h3>
+                    <p style="color: var(--sub); font-size: 0.95rem; line-height: 1.6;">Flawless integration with your curated Spotify playlists, albums, and top artists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="video-grid" id="live-container">
-                    <!-- Live Item 1 -->
-                    <div class="video-card reveal">
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/rhywMEyc0Oo/maxresdefault.jpg" alt="VALORANT LIVE" loading="lazy">
-                                <div class="live-badge">LIVE</div>
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="video-info">
-                            <div class="video-meta">
-                                <span><i class="fas fa-eye"></i> 52 Views</span>
-                                <span><i class="far fa-heart"></i> 6 Likes</span>
-                            </div>
-                            <h4>VALORANT ???</h4>
-                            <p>Recent live transmission from the Valorant battlefield. Tactical highlights and clutch moments.</p>
-                            <a href="https://www.youtube.com/watch?v=rhywMEyc0Oo" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Stream</a>
-                        </div>
+    <!-- ── FEATURES ─────────────────────── -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="sec-head reveal">
+                <div class="pill" style="justify-content:center; margin-bottom: 20px;">
+                    <span class="pill-dot"></span> Features
+                </div>
+                <h2 class="sec-title">Everything you need.<br><span class="grad">Nothing you don't.</span></h2>
+                <p class="sec-sub">A comprehensive suite of audio features designed to provide crystal clear music, interactive controls, and endless entertainment.</p>
+            </div>
+            <div class="feat-grid">
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-music"></i></div>
+                    <h3>Advanced Music System</h3>
+                    <p>Crystal clear audio, custom playlists, interactive UI panels, queue jumping, and DJ roles to control the party.</p>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-sliders"></i></div>
+                    <h3>Audio Filters & Radio</h3>
+                    <p>Apply real-time filters like Bassboost, Nightcore, 8D, and Lofi. Listen to live FM radios seamlessly without losing your current queue.</p>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Autoplay & 24/7 Mode</h3>
+                    <p>Never let the music stop! Bot automatically picks related songs or stays in your voice channel 24/7.</p>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-star"></i></div>
+                    <h3>User Entrance Themes</h3>
+                    <p>Set your personal WWE-style entrance music that plays automatically for 10 seconds when you join a voice channel.</p>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-list-check"></i></div>
+                    <h3>Interactive UI Panels</h3>
+                    <p>Control everything via buttons and dropdowns! Skip, pause, apply filters, and jump to specific songs in the queue without typing a single command.</p>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-icon"><i class="fas fa-headphones"></i></div>
+                    <h3>Personal Playlists</h3>
+                    <p>Create, save, and load your own personal playlists directly in Discord. Carry your favorite songs across any server Bobo is in!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── COMMANDS ─────────────────────── -->
+    <section class="commands-section" id="commands">
+        <div class="container">
+            <div class="sec-head reveal">
+                <div class="pill" style="justify-content:center; margin-bottom: 20px;">
+                    <span class="pill-dot"></span> Commands
+                </div>
+                <h2 class="sec-title">Music <span class="grad">Commands</span></h2>
+                <p class="sec-sub">Explore the vast library of commands Bobo has to offer.</p>
+            </div>
+
+            <div class="cmd-category reveal">
+                <div class="cmd-cat-header">
+                    <div class="cmd-cat-icon"><i class="fas fa-music"></i></div>
+                    <div>
+                        <h3 class="cmd-cat-title">Music Commands</h3>
+                        <p class="cmd-cat-sub">High fidelity music streaming</p>
                     </div>
-
-                    <!-- Live Item 2 -->
-                    <div class="video-card reveal">
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/jv2HpFSQfgQ/maxresdefault.jpg" alt="VALORANT LAST DANCE" loading="lazy">
-                            <div class="holographic-overlay"></div>
-                            <div class="live-badge">LIVE</div>
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="video-info">
-                            <div class="video-meta">
-                                <span><i class="fas fa-eye"></i> 37 Views</span>
-                                <span><i class="far fa-heart"></i> 3 Likes</span>
-                            </div>
-                            <h4>VALORANT THE LAST DANCE ???</h4>
-                            <p>Late night Valo grind. The final push for glory and insane team plays.</p>
-                            <a href="https://www.youtube.com/watch?v=jv2HpFSQfgQ" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Stream</a>
-                        </div>
+                </div>
+                <div class="cmd-grid">
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/play</div>
+                        <p class="cmd-card-desc">Play a song from YouTube, Spotify, or URL.</p>
                     </div>
-
-                    <!-- Live Item 3 -->
-                    <div class="video-card reveal">
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/-LqDDUCeX10/maxresdefault.jpg" alt="VALORANT" loading="lazy">
-                            <div class="holographic-overlay"></div>
-                            <div class="live-badge">LIVE</div>
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="video-info">
-                            <div class="video-meta">
-                                <span><i class="fas fa-eye"></i> 83 Views</span>
-                                <span><i class="far fa-heart"></i> 8 Likes</span>
-                            </div>
-                            <h4>VALORANT Highlights</h4>
-                            <p>Epic full-length stream archives. Mastering Agent abilities and map callouts.</p>
-                            <a href="https://www.youtube.com/watch?v=-LqDDUCeX10" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Stream</a>
-                        </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/join</div>
+                        <p class="cmd-card-desc">Connect the bot to your voice channel without playing music.</p>
                     </div>
-
-                    <!-- Live Item 4 -->
-                    <div class="video-card reveal">
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/_yb3yrSsgI8/maxresdefault.jpg" alt="VALORANT RANKED" loading="lazy">
-                            <div class="holographic-overlay"></div>
-                            <div class="live-badge">LIVE</div>
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="video-info">
-                            <div class="video-meta">
-                                <span><i class="fas fa-eye"></i> 43 Views</span>
-                                <span><i class="far fa-heart"></i> 7 Likes</span>
-                            </div>
-                            <h4>VALORANT Solo Queue</h4>
-                            <p>Navigating the ranked climb solo. High stakes and intense communication gameplay.</p>
-                            <a href="https://www.youtube.com/watch?v=_yb3yrSsgI8" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Stream</a>
-                        </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/skip</div>
+                        <p class="cmd-card-desc">Skip the currently playing song.</p>
                     </div>
-
-                    <!-- Live Item 5 -->
-                    <div class="video-card reveal">
-                        <div class="video-thumb">
-                            <img src="https://img.youtube.com/vi/GikiAGrpSiY/maxresdefault.jpg" alt="SOLO VALORANT" loading="lazy">
-                            <div class="holographic-overlay"></div>
-                            <div class="live-badge">LIVE</div>
-                            <div class="play-btn">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="video-info">
-                            <div class="video-meta">
-                                <span><i class="fas fa-eye"></i> 73 Views</span>
-                                <span><i class="far fa-heart"></i> 8 Likes</span>
-                            </div>
-                            <h4>SOLO VALORANT RANK PUSH</h4>
-                            <p>Continuous ranked session from the @NEW-BRON archives. Every second of the climb.</p>
-                            <a href="https://www.youtube.com/watch?v=GikiAGrpSiY" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Watch Stream</a>
-                        </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/queue</div>
+                        <p class="cmd-card-desc">View the current music queue.</p>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/247</div>
+                        <p class="cmd-card-desc">Toggle 24/7 mode in the voice channel.</p>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/settheme</div>
+                        <p class="cmd-card-desc">Set your personal entrance theme song.</p>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/panel</div>
+                        <p class="cmd-card-desc">Spawn the interactive UI player control panel.</p>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/playlist</div>
+                        <p class="cmd-card-desc">Save the current queue as a permanent playlist.</p>
+                    </div>
+                    <div class="cmd-card">
+                        <div class="cmd-card-name">/load</div>
+                        <p class="cmd-card-desc">Load and play your saved personal playlists.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section Overhaul: Vanguard Armory -->
-    <section class="section-padding" id="categories" style="position: relative; overflow: hidden; z-index: 5;">
-        <!-- Section BG Effect -->
-        <div class="section-bg-fx" id="armory-bg-fx">
-            <div class="sbg-scanline"></div>
-        </div>
+    <!-- ── CTA ─────────────────────── -->
+    <section class="cta-section" id="home-cta">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 style="letter-spacing: 12px; margin-bottom: 5px; text-shadow: 0 0 15px var(--primary-glow);">GAMES LIBRARY</h2>
-                <div class="dash"></div>
-            </div>
-            
-            <div class="armory-grid">
-                <!-- VALORANT Card -->
-                <div class="category-card reveal" onclick="openArmory('valorant')">
-                    <img src="assets/armory/valorant.png" alt="VALORANT" loading="lazy">
-                    <div class="category-overlay">
-                        <span>TACTICAL FPS</span>
-                        <h3>VALORANT</h3>
-                    </div>
-                </div>
-
-                <!-- GTA V Card -->
-                <div class="category-card reveal" onclick="openArmory('gta')">
-                    <img src="assets/armory/gta.png" alt="GTA V" loading="lazy">
-                    <div class="category-overlay">
-                        <span>OPEN WORLD</span>
-                        <h3>GTA V</h3>
-                    </div>
-                </div>
-
-                <!-- AMONG US Card -->
-                <div class="category-card reveal" onclick="openArmory('amongus')">
-                    <img src="assets/armory/amongus.png" alt="AMONG US" loading="lazy">
-                    <div class="category-overlay">
-                        <span>SPATIAL HORROR</span>
-                        <h3>AMONG US</h3>
-                    </div>
-                </div>
-
-                <!-- CS 2 Card -->
-                <div class="category-card reveal" onclick="openArmory('cs2')">
-                    <img src="assets/armory/cs2.png" alt="CS 2" loading="lazy">
-                    <div class="category-overlay">
-                        <span>COMPETITIVE</span>
-                        <h3>CS 2</h3>
-                    </div>
-                </div>
-
-                <!-- RAFT Card -->
-                <div class="category-card reveal" onclick="openArmory('raft')">
-                    <img src="assets/armory/raft.png" alt="RAFT" loading="lazy">
-                    <div class="category-overlay">
-                        <span>SURVIVAL</span>
-                        <h3>RAFT</h3>
+            <div class="cta-box reveal">
+                <div class="cta-glow"></div>
+                <div class="cta-inner">
+                    <h2 class="cta-title">Ready to elevate your music experience?</h2>
+                    <p class="cta-sub">Join thousands of servers already using Bobo to listen to high-fidelity audio and interactive music streams.</p>
+                    <div class="cta-btns">
+                        <a href="#" onclick="openPrivateModal(event)" class="btn btn-primary"><i class="fab fa-discord"></i> Add to Discord</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section-padding about" id="about" style="position: relative; overflow: hidden;">
-        <!-- Section BG Effect -->
-        <div class="section-bg-fx" id="about-bg-fx">
-            <div class="sbg-scanline"></div>
-        </div>
+    <!-- ── FOOTER ─────────────────────── -->
+    <footer class="footer">
         <div class="container">
-            <div class="about-content reveal">
-                <div class="about-header">
-                    <div class="about-logo-container">
-                        <img src="assets/nb_logo.png" alt="NB Logo" class="about-logo-img" loading="lazy">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand-logo">
+                        <img src="images/bobobo.png" alt="Bobo" onerror="this.src='https://ui-avatars.com/api/?name=B&background=0284c7&color=fff'">
+                        <span>Bobo</span>
                     </div>
-                    <div class="about-title-group">
-                        <p class="about-label">ABOUT</p>
-                        <h2>NEW BRON</h2>
-                        <p class="about-tagline">GAMING &amp; STREAMING CHANNEL</p>
-                    </div>
+                    <p class="footer-brand-desc">The ultimate Discord music bot combining high fidelity audio, interactive controls, and 24/7 seamless playback.</p>
                 </div>
-
-                <div class="about-divider"></div>
-
-                <p class="about-desc">Establishing the next generation of digital entertainment. NEW BRON is a high-performance gaming archive dedicated to tactical precision and unfiltered competitive experiences. Join the directive.</p>
-
-                <div class="about-stats-row">
-                    <div class="about-stat">
-                        <span class="about-stat-num">75+</span>
-                        <span class="about-stat-label">Subscribers</span>
-                    </div>
-                    <div class="about-stat-divider"></div>
-                    <div class="about-stat">
-                        <span class="about-stat-num">28</span>
-                        <span class="about-stat-label">Videos</span>
-                    </div>
-                    <div class="about-stat-divider"></div>
-                    <div class="about-stat">
-                        <span class="about-stat-num">1.5K+</span>
-                        <span class="about-stat-label">Views</span>
-                    </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#commands">Commands</a></li>
+                    </ul>
                 </div>
-
-                <div class="about-social reveal">
-                    <a href="https://www.youtube.com/@NEW-BRON/videos" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.twitch.tv/newbronsl" target="_blank" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
-                    <a href="https://www.tiktok.com/@n3wb067" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/isuru4444/?hl=en" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://steamcommunity.com/profiles/76561199812930590/" target="_blank" title="Steam"><i class="fa-brands fa-steam"></i></a>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Support Server</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
                 </div>
-
-                <div class="about-btns">
-                    <a href="https://isurugihan2023-bit.github.io/discord-pfp/" target="_blank" class="btn btn-discord-profile btn-large">
-                        <i class="fab fa-discord"></i> DISCORD PROFILE
-                    </a>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <!-- Footer BG Effect -->
-        <div class="section-bg-fx" id="footer-bg-fx">
-            <div class="sbg-scanline"></div>
-        </div>
-        <div class="container">
-            <div class="footer-content">
-                <a href="#" class="logo">
-                    <img src="assets/nb_logo.png" alt="NB Logo" class="footer-logo-img" loading="lazy">
-                    NEW <span>BRON</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#videos">Videos</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 NEW BRON. All Rights Reserved. | <a href="https://www.youtube.com/@NEW-BRON/videos" target="_blank" class="footer-link">Subscribe</a></p>
+            <div class="footer-bottom">
+                <div class="footer-copy">&copy; 2026 Bobo Bot. All rights reserved.</div>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Tactical Armory Modal -->
-    <div class="armory-modal" id="armory-modal">
-        <div class="modal-shutter-container">
-            <div class="modal-close" id="modal-close">&times;</div>
-            <div class="modal-body">
-                <div class="modal-art">
-                    <img src="" id="modal-image" alt="Game Art">
-                </div>
-                <div class="modal-info">
-                    <h2 id="modal-title">MISSION DATA</h2>
-                    <p id="modal-desc">Synchronizing with target mission archive. Please wait...</p>
-                    <a href="#" id="modal-link" class="btn-quickplay" target="_blank"><i class="fas fa-play"></i> QUICK WATCH</a>
-                </div>
+    <!-- Private Beta Modal -->
+    <div id="privateModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closePrivateModal()">
+                <i class="fas fa-times"></i>
             </div>
+            <div class="modal-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h2 class="modal-title">Access Restricted</h2>
+            <p class="modal-desc">Bobo Bot is currently in <strong>Private Beta</strong> for testing. Public invites are temporarily disabled to ensure maximum stability and performance.</p>
+            <p class="modal-desc">Stay tuned for the public release!</p>
+            <button class="btn btn-primary modal-btn" onclick="closePrivateModal()">Okay, I'll wait</button>
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
